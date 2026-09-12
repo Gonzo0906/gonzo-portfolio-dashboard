@@ -125,5 +125,5 @@ try{const response=await fetch('holdings.json');if(!response.ok)throw Error('Can
   if(document.hidden||$('dialog').open||market.news.length<2||$('news').matches(':hover')||$('newsPages').matches(':hover')||$('news').contains(document.activeElement)||$('newsPages').contains(document.activeElement))return;
   pages.news=(pages.news+1)%market.news.length;
   render();
- },10000);
+ },7000);
  new ResizeObserver(()=>render()).observe($('stocks'));render();await refresh();setInterval(()=>{refresh();},120000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});}catch(e){$('coverage').textContent=e.message;}

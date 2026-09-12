@@ -71,3 +71,10 @@
 @media(max-width:750px){#notificationDropdown{top:60px}.brand h1{font-size:12px}.tools{gap:2px}.tools button{padding:6px 3px}#recordPurchase{font-size:9px}#conceal{font-size:9px}}
 
 .uploadLabel{display:block;margin:14px 0}.uploadLabel input{margin-top:6px}textarea{font:inherit;width:100%;max-width:100%;background:#091222;color:#e5edf9;border:1px solid #425575;border-radius:7px;padding:9px}.uploadTable{margin:14px 0}.uploadRow{display:grid;grid-template-columns:24px 1.1fr 1fr 1fr;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid var(--line)}.uploadRow small{display:block;font-size:10px;overflow-wrap:anywhere}.uploadRow input[type=checkbox],.uploadConfirm input{width:18px;height:18px}.uploadMatch{grid-column:2/-1;color:var(--muted)}.uploadHead{font-size:11px;color:var(--muted)}.uploadConfirm{display:flex;align-items:center;gap:9px;margin-top:16px}#screenshotPreviews{display:flex;gap:8px;overflow:auto;max-width:100%;margin-top:12px}#screenshotPreviews img{height:100px;width:auto;max-width:130px;object-fit:contain;border:1px solid var(--line);border-radius:6px}#scanStatus{color:var(--green)}#updateHoldings{white-space:nowrap}@media(max-width:750px){#updateHoldings{padding:6px 4px}.uploadRow{grid-template-columns:20px .9fr 1fr 1fr;gap:5px;font-size:12px}.uploadRow input{padding:7px 4px}.uploadHead{font-size:10px}}
+
+/* Slightly larger type while preserving the compact holdings grid. */
+.holding b{font-size:14px}.holding div:nth-child(3) b{font-size:13px}
+.holding small{font-size:11px}.columnlabels{font-size:11px}
+#news,#alerts{font-size:14px}.newsitem b{font-size:14px}.newsitem small{font-size:12px}
+@media(max-width:750px){.holding b{font-size:12px}.holding div:nth-child(3) b{font-size:clamp(10px,2.8vw,12px)}.newsitem b,#alerts{font-size:12px}.newsitem small{font-size:11px}.columnlabels{font-size:10px}}
+@media(max-height:500px){.holding b{font-size:12px}.holding div:nth-child(3) b{font-size:10px}.newsitem b{font-size:11px;-webkit-line-clamp:1}.newsitem small{font-size:10px;margin-top:2px}}
