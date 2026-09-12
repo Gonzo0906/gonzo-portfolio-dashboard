@@ -1,6 +1,9 @@
-name: Deploy one-minute price backend
+name: Deploy two-minute price backend
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['backend/**', '.github/workflows/backend.yml']
 permissions:
   contents: read
 jobs:
@@ -19,7 +22,8 @@ jobs:
           test -n "$CLOUDFLARE_API_TOKEN" || { echo 'Missing CLOUDFLARE_API_TOKEN Actions secret'; exit 1; }
           test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo 'Missing CLOUDFLARE_ACCOUNT_ID Actions secret'; exit 1; }
           export CLOUDFLARE_API_TOKEN="$(python -c 'import os; print(os.environ["CLOUDFLARE_API_TOKEN"].strip())')"
-          export CLOUDFLARE_ACCOUNT_ID="$(python -c 'import os; print(os.environ["CLOUDFLARE_ACCOUNT_ID"].strip())')"
+          export CLOUDFLARE_ACCOUNT_ID="$(python -c 'import os; print("".join(os.environ["CLOUDFLARE_ACCOUNT_ID"].split()))')"
           echo "::add-mask::$CLOUDFLARE_API_TOKEN"
           echo "::add-mask::$CLOUDFLARE_ACCOUNT_ID"
+          python -c 'import os,re; assert re.fullmatch(r"[0-9a-fA-F]{32}",os.environ["CLOUDFLARE_ACCOUNT_ID"]), "Invalid Cloudflare account ID; enter the 32-character account ID only"'
           npx --yes wrangler@4 deploy --config backend/wrangler.jsonc

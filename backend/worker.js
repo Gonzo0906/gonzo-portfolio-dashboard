@@ -28,21 +28,21 @@ export async function fetchQuotes(env={}){
   const prices=await json(`https://api.coingecko.com/api/v3/simple/price?ids=${encodeURIComponent(ids)}&vs_currencies=usd&include_24hr_change=true&include_last_updated_at=true`,extra);
   for(const [symbol,_,id] of crypto){const q=prices[id];const ok=finite(q?.usd)&&q.usd>0&&q.last_updated_at;quotes[symbol]={price:ok?q.usd:null,dailyPct:ok?q.usd_24h_change??null:null,timestamp:ok?q.last_updated_at:null,provider:'CoinGecko',providerId:id,status:ok?'connected':'unavailable'};}
  }catch(e){for(const [symbol,_,id] of crypto)quotes[symbol]={price:null,dailyPct:null,timestamp:null,provider:'CoinGecko',providerId:id,status:'unavailable',error:e.message};}
- return {schema:1,fetchedAt:Date.now()/1000,startedAt:started,refreshSeconds:60,quotes,issues:Object.entries(quotes).filter(([_,q])=>q.price===null).map(([s,q])=>s+': '+(q.error||'Unavailable'))};
+ return {schema:1,fetchedAt:Date.now()/1000,startedAt:started,refreshSeconds:120,quotes,issues:Object.entries(quotes).filter(([_,q])=>q.price===null).map(([s,q])=>s+': '+(q.error||'Unavailable'))};
 }
 export default {
  async fetch(request,env,ctx){
   const url=new URL(request.url);
   if(request.method==='OPTIONS')return new Response(null,{headers:{...headers,'Access-Control-Allow-Methods':'GET, OPTIONS'}});
   if(request.method!=='GET')return new Response('Method not allowed',{status:405,headers});
-  if(url.pathname!=='/prices')return new Response(JSON.stringify({service:'Gonzo minute price feed',endpoint:'/prices'}),{headers});
+  if(url.pathname!=='/prices')return new Response(JSON.stringify({service:'Gonzo two-minute price feed',endpoint:'/prices'}),{headers});
   const key=new Request(url.origin+'/prices');
   const cached=await caches.default.match(key);
-  if(cached){const d=await cached.json();if(Date.now()/1000-d.fetchedAt<55)return new Response(JSON.stringify(d),{headers});}
+  if(cached){const d=await cached.json();if(Date.now()/1000-d.fetchedAt<115)return new Response(JSON.stringify(d),{headers});}
   const data=await fetchQuotes(env);
   const body=JSON.stringify(data);
   // Cache only briefly. Fetch while open; no claims of background alerts.
-  if(Object.values(data.quotes).some(q=>q.price!==null))ctx.waitUntil(caches.default.put(key,new Response(body,{headers:{'Content-Type':'application/json','Cache-Control':'public, max-age=55'}})));
+  if(Object.values(data.quotes).some(q=>q.price!==null))ctx.waitUntil(caches.default.put(key,new Response(body,{headers:{'Content-Type':'application/json','Cache-Control':'public, max-age=115'}})));
   return new Response(body,{headers});
  }
 };
