@@ -28,6 +28,21 @@ export async function fetchQuotes(env={}){
   const prices=await json(`https://api.coingecko.com/api/v3/simple/price?ids=${encodeURIComponent(ids)}&vs_currencies=usd&include_24hr_change=true&include_last_updated_at=true`,extra);
   for(const [symbol,_,id] of crypto){const q=prices[id];const ok=finite(q?.usd)&&q.usd>0&&q.last_updated_at;quotes[symbol]={price:ok?q.usd:null,dailyPct:ok?q.usd_24h_change??null:null,timestamp:ok?q.last_updated_at:null,provider:'CoinGecko',providerId:id,status:ok?'connected':'unavailable'};}
  }catch(e){for(const [symbol,_,id] of crypto)quotes[symbol]={price:null,dailyPct:null,timestamp:null,provider:'CoinGecko',providerId:id,status:'unavailable',error:e.message};}
+
+ const paprikaIds={JitoSOL:'jitosol-jito-staked-sol',SOL:'sol-solana',BTC:'btc-bitcoin',DOGE:'doge-dogecoin',XRP:'xrp-xrp',SHIB:'shib-shiba-inu',ADA:'ada-cardano',HBAR:'hbar-hedera-hashgraph',FLR:'flr-flare-network',ZBCN:'zbcn-zebec-network',WLFI:'wlfi-official-world-liberty-financial',TRUMP:'trump-official-trump',PEPE:'pepe-pepe',PI:'pi2-pi-network',ETH:'eth-ethereum'};
+ // One public aggregate request covers rate-limited or missing crypto quotes.
+ if(crypto.some(([symbol])=>quotes[symbol]?.price===null)){
+  try{
+   const tickers=await json('https://api.coinpaprika.com/v1/tickers');
+   const byId=new Map(tickers.map(q=>[q.id,q]));
+   for(const [symbol] of crypto){
+    if(quotes[symbol]?.price!==null)continue;
+    const id=paprikaIds[symbol],q=byId.get(id),usd=q?.quotes?.USD,timestamp=Date.parse(q?.last_updated)/1000;
+    if(q?.symbol?.trim().toUpperCase()!==symbol.toUpperCase()||!finite(usd?.price)||usd.price<=0||!finite(timestamp))continue;
+    quotes[symbol]={price:usd.price,dailyPct:finite(usd.percent_change_24h)?usd.percent_change_24h:null,timestamp,provider:'CoinPaprika',providerId:id,name:q.name,status:'connected'};
+   }
+  }catch(e){ /* Preserve the unavailable quote and original provider error. */ }
+ }
  return {schema:1,fetchedAt:Date.now()/1000,startedAt:started,refreshSeconds:120,quotes,issues:Object.entries(quotes).filter(([_,q])=>q.price===null).map(([s,q])=>s+': '+(q.error||'Unavailable'))};
 }
 export default {
