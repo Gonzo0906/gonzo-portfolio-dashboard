@@ -16,14 +16,14 @@ jobs:
           node-version: '22'
       - name: Validate the current deployment account and API token
         env:
-          QUOTE_DEPLOY_TOKEN_INPUT: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          QUOTE_DEPLOY_TOKEN_INPUT: ${{ secrets.GONZO_CLOUDFLARE_TOKEN }}
           QUOTE_ACCOUNT_ID_INPUT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           python - <<'PY'
           import os, json, urllib.request, urllib.error, re
           raw_token = os.environ["QUOTE_DEPLOY_TOKEN_INPUT"]
           raw_account = os.environ["QUOTE_ACCOUNT_ID_INPUT"]
-          print("Credential source: repository secrets.CLOUDFLARE_API_TOKEN")
+          print("Credential source: repository secrets.GONZO_CLOUDFLARE_TOKEN")
           print("Token and Account ID inputs identical: " + str(raw_token.strip() == raw_account.strip()))
           print("Raw token has expected modern prefix: " + str(raw_token.strip().startswith(("cfat_", "cfut_"))))
           print("Raw Account ID has token prefix: " + str(raw_account.strip().startswith(("cfat_", "cfut_"))))
