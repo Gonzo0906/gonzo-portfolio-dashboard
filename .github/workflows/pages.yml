@@ -34,6 +34,12 @@ jobs:
         env:
           COINGECKO_DEMO_API_KEY: ${{ secrets.COINGECKO_DEMO_API_KEY }}
         run: python3 scripts/refresh.py
+      - name: Install UI verification dependencies
+        if: github.event_name != 'schedule'
+        run: npm ci && npx playwright install --with-deps chromium
+      - name: Verify viewport layout, pagination, persistence and popup behavior
+        if: github.event_name != 'schedule'
+        run: npx playwright test
       - uses: actions/configure-pages@v5
         with:
           enablement: true
