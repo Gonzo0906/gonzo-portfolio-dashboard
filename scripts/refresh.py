@@ -64,6 +64,9 @@ def news_query(query, tags):
     for n in ET.fromstring(request(url)).findall('./channel/item')[:8]:
         title = n.findtext('title', '')
         source = n.findtext('source', '')
+        # Exclude automatically generated INR quote pages from the article feed.
+        if source == 'LatestLY' and re.search(r'Price \([^)]* INR\)', title):
+            continue
         link = n.findtext('link', '')
         published = n.findtext('pubDate', '')
         try:
