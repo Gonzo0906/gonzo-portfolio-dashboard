@@ -17,6 +17,7 @@ jobs:
       - name: Identify deployment account securely
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          SAVED_CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           python - <<'PY'
           import os, json, urllib.request, urllib.error, re
@@ -24,6 +25,14 @@ jobs:
           if not token:
               raise SystemExit("Missing Cloudflare API token")
           print("::add-mask::" + token)
+          saved = os.environ.get("SAVED_CLOUDFLARE_ACCOUNT_ID", "").strip()
+          if re.fullmatch(r"[0-9a-fA-F]{32}", saved):
+              print("::add-mask::" + saved)
+              with open(os.environ["GITHUB_ENV"], "a") as output:
+                  output.write("CLOUDFLARE_ACCOUNT_ID=" + saved + "\n")
+                  output.write("CLOUDFLARE_API_TOKEN=" + token + "\n")
+              print("Saved deployment account configured successfully")
+              raise SystemExit(0)
           req = urllib.request.Request("https://api.cloudflare.com/client/v4/accounts?per_page=50", headers={"Authorization": "Bearer " + token})
           try:
               with urllib.request.urlopen(req, timeout=30) as response:
