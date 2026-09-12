@@ -1,5 +1,7 @@
 import {test,expect} from '@playwright/test';
 import fs from 'node:fs';
+// Snapshot UI checks use fixed prices; backend polling is covered separately.
+test.beforeEach(async ({page})=>{await page.route('**/feed-config.json',route=>route.fulfill({json:{priceEndpoint:null,priceRefreshSeconds:120}}));});
 const raw=JSON.parse(fs.readFileSync(new URL('../../public/holdings.json',import.meta.url)));
 const market=JSON.parse(fs.readFileSync(new URL('../../public/data/market.json',import.meta.url)));
 for (const [width,height] of [[1440,900],[1366,768],[1920,1080],[768,1024],[390,844],[360,640],[320,568],[844,390],[640,360],[568,320]]){
