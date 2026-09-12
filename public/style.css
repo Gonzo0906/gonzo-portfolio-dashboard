@@ -45,3 +45,14 @@
 @media(min-width:751px) and (min-height:850px){.holding div:first-child small{display:block}}
 
 .holding b,.holding small{line-height:1}
+
+/* Conceal financial information without changing the one-screen layout. */
+.concealed #coverage,.concealed #stockAlloc,.concealed #cryptoAlloc,
+.concealed #alerts,.concealed #toasts {visibility:hidden}
+.concealed .holding .positive,.concealed .holding .negative{color:var(--muted)!important}
+.privacyNotice{display:none}
+.concealed .financialDialog #dialogBody{display:none}
+.concealed .financialDialog .privacyNotice{display:block;margin:16px 0;color:var(--muted)}
+#conceal{white-space:nowrap;font-size:12px}
+#dialogConceal{margin-left:auto;white-space:nowrap;font-size:12px}
+@media(max-width:750px){.tools{gap:3px}.tools button{padding:6px}#conceal{font-size:10px}.brand{gap:4px}h1{font-size:16px}h1 span{font-size:12px}}
