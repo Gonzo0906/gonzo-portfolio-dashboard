@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['backend/**', 'public/holdings.json', '.github/workflows/backend.yml']
+    paths: ['backend/**', 'public/holdings.json', 'public/friends/**', '.github/workflows/backend.yml']
 permissions:
   contents: read
 jobs:
@@ -122,3 +122,22 @@ jobs:
           subprocess.run(["npx", "--yes", "wrangler@4", "secret", "put", "COINGECKO_DEMO_API_KEY", "--config", "backend/wrangler.jsonc"], input=key+"\n", text=True, check=True)
           print("Crypto API key configured securely")
           PY
+
+      - name: Deploy empty friend dashboard
+        run: npx --yes wrangler@4 deploy --config backend/friends-wrangler.jsonc
+      - name: Configure friend dashboard crypto key
+        env:
+          CRYPTO_KEY_INPUT: ${{ secrets.COINGECKO_DEMO_API_KEY }}
+        run: |
+          python - <<'PY'
+          import os, re, subprocess
+          key = os.environ["CRYPTO_KEY_INPUT"].strip()
+          if not key:
+              print("Crypto key not configured; public snapshots remain available")
+              raise SystemExit(0)
+          if re.search(r"\s", key):
+              raise SystemExit("Crypto API key contains whitespace")
+          subprocess.run(["npx", "--yes", "wrangler@4", "secret", "put", "COINGECKO_DEMO_API_KEY", "--config", "backend/friends-wrangler.jsonc"], input=key+"\n", text=True, check=True)
+          print("Crypto API key configured securely")
+          PY
+

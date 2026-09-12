@@ -1,0 +1,7 @@
+{
+ "name":"gonzo-portfolio-for-friends",
+ "main":"friends-worker.js",
+ "compatibility_date":"2026-09-12",
+ "workers_dev":true,
+ "assets":{"directory":"../public/friends","binding":"ASSETS","run_worker_first":["/api/*"],"not_found_handling":"none"}
+}
