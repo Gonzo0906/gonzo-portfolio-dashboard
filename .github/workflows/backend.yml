@@ -63,5 +63,5 @@ jobs:
               output.write("CLOUDFLARE_API_TOKEN=" + token + "\n")
           print("Deployment account identified successfully")
           PY
-      - name: Deploy secure quote backend
+      - name: Deploy quote backend with current saved credentials
         run: npx --yes wrangler@4 deploy --config backend/wrangler.jsonc
