@@ -22,6 +22,18 @@ jobs:
           python - <<'PY'
           import os, json, urllib.request, urllib.error, re
           token = os.environ["CLOUDFLARE_API_TOKEN"].strip()
+          # Accept common copied wrappers while keeping the credential out of logs.
+          header = re.findall(r"Authorization:\s*Bearer\s+([^\s\"']+)", token, re.I)
+          if len(header) == 1:
+              token = header[0]
+          elif token.startswith("CLOUDFLARE_API_TOKEN="):
+              token = token.split("=", 1)[1].strip()
+          token = token.strip("\"'")
+          if token.lower().startswith("bearer "):
+              token = token[7:].strip().strip("\"'")
+          print("::add-mask::" + token)
+          if re.search(r"\s", token) or len(token) < 30:
+              raise SystemExit("Saved value is not a complete API token. Copy the token secret displayed immediately after Create Token.")
           if not token:
               raise SystemExit("Missing Cloudflare API token")
           print("::add-mask::" + token)
