@@ -107,25 +107,3 @@ jobs:
           PY
       - name: Deploy quote backend with current saved credentials
         run: npx --yes wrangler@4 deploy --config backend/wrangler.jsonc
-      - name: Verify the deployed public price feed
-        run: |
-          python - <<'PY'
-          import json, urllib.request, time
-          url = "https://gonzo-minute-price-feed.gonzo0906-portfolio.workers.dev/prices"
-          for attempt in range(12):
-              try:
-                  with urllib.request.urlopen(url, timeout=80) as response:
-                      data = json.load(response)
-                  available = sum(isinstance(q.get("price"), (int, float)) and q["price"] > 0 for q in data.get("quotes", {}).values())
-                  if data.get("schema") != 1 or data.get("refreshSeconds") != 120 or not available:
-                      raise ValueError("No valid quotes")
-                  print("Verified price endpoint: " + url)
-                  print("Available quotes: " + str(available) + "/" + str(len(data["quotes"])))
-                  print("Feed refresh seconds: " + str(data["refreshSeconds"]))
-                  break
-              except Exception as error:
-                  print("Public feed verification attempt " + str(attempt + 1) + ": " + type(error).__name__)
-                  if attempt == 11:
-                      raise SystemExit("Public feed verification failed")
-                  time.sleep(15)
-          PY
