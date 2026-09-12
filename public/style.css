@@ -90,3 +90,8 @@
 #creatorCredit{margin-left:auto;flex-shrink:0;white-space:nowrap;font-family:'Space Grotesk',system-ui,sans-serif;font-size:14px;font-weight:700;line-height:1.15;padding:3px 9px;border:1px solid #9de8df;border-radius:7px;color:#081a29;background:linear-gradient(110deg,#7ce8c6,#9cbcff);box-shadow:0 0 12px #64ddbe33;letter-spacing:.15px}
 @media(max-width:750px){#creatorCredit{font-size:13px;padding:3px 7px}}
 @media(max-height:500px){#creatorCredit{font-size:12px;padding:1px 6px}}
+
+/* Larger stock labels with room for quantities in the dense grid. */
+.stock .holding .asset{font-size:18px}.stock .holding div:nth-child(3) b{font-size:17px}
+@media(max-width:750px){.stock .holding .asset{font-size:15px}.stock .holding div:nth-child(3) b{font-size:14px}}
+@media(max-height:500px){.stock .holding .asset{font-size:14px}.stock .holding div:nth-child(3) b{font-size:12px}}
