@@ -22,7 +22,7 @@ jobs:
           test -n "$CLOUDFLARE_API_TOKEN" || { echo 'Missing CLOUDFLARE_API_TOKEN Actions secret'; exit 1; }
           test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo 'Missing CLOUDFLARE_ACCOUNT_ID Actions secret'; exit 1; }
           export CLOUDFLARE_API_TOKEN="$(python -c 'import os; print(os.environ["CLOUDFLARE_API_TOKEN"].strip())')"
-          export CLOUDFLARE_ACCOUNT_ID="$(python -c 'import os; print("".join(os.environ["CLOUDFLARE_ACCOUNT_ID"].split()))')"
+          export CLOUDFLARE_ACCOUNT_ID="$(python -c 'import os,re; raw="".join(os.environ["CLOUDFLARE_ACCOUNT_ID"].split()).replace("\u200b","").replace("\ufeff",""); ids=set(re.findall(r"(?<![0-9a-fA-F])[0-9a-fA-F]{32}(?![0-9a-fA-F])",raw)); assert len(ids)==1, "Saved value must contain exactly one valid Cloudflare account ID"; print(ids.pop())')"
           echo "::add-mask::$CLOUDFLARE_API_TOKEN"
           echo "::add-mask::$CLOUDFLARE_ACCOUNT_ID"
           python -c 'import os,re; assert re.fullmatch(r"[0-9a-fA-F]{32}",os.environ["CLOUDFLARE_ACCOUNT_ID"]), "Invalid Cloudflare account ID; enter the 32-character account ID only"'
