@@ -20,7 +20,7 @@ export function returns(h, q) {
 export function quoteStatus(q, fetchedAt, now=Date.now()/1000) {
   if (!validNumber(q?.price) || !q.timestamp) return 'unavailable';
   if (!fetchedAt || now-fetchedAt>3600) return 'stale snapshot';
-  if (q.provider==='CoinGecko') return now-q.timestamp>1800?'stale':'connected';
+  if (['CoinGecko','CoinPaprika'].includes(q.provider)) return now-q.timestamp>1800?'stale':'connected';
   // Friday close remains valid over a weekend; always show its exact timestamp.
   if (now-q.timestamp>4*86400) return 'stale';
   return q.sessionEnd && now>q.sessionEnd?'market closed · delayed':'delayed';
