@@ -141,3 +141,36 @@ jobs:
           print("Crypto API key configured securely")
           PY
 
+      - name: Verify public friend app and market prices
+        run: |
+          python - <<'PY'
+          import urllib.request, urllib.error, json, time
+          base = "https://gonzo-portfolio-for-friends.gonzo0906-portfolio.workers.dev"
+          def read(path):
+              with urllib.request.urlopen(base + path, timeout=45) as response:
+                  return response.read().decode()
+          html = read("/")
+          assert "addHolding" in html and "shareDashboard" in html
+          app = read("/app.js")
+          assert "PORTFOLIO_KEY" in app and "fetch('holdings.json')" not in app
+          for path in ["/holdings.json", "/data/market.json", "/backend/worker.js"]:
+              try:
+                  read(path)
+              except urllib.error.HTTPError as error:
+                  assert error.code == 404, (path, error.code)
+              else:
+                  raise AssertionError("Owner file unexpectedly accessible: " + path)
+          empty = json.loads(read("/api/prices"))
+          assert empty["quotes"] == {}
+          for attempt in range(4):
+              data = json.loads(read("/api/prices?stocks=AAPL&crypto=ETH:ethereum"))
+              if all(data["quotes"].get(s, {}).get("price", 0) and data["quotes"][s]["price"] > 0 for s in ["AAPL", "ETH"]):
+                  break
+              time.sleep(5)
+          else:
+              raise AssertionError("Live test prices unavailable: " + str(data.get("issues")))
+          assert data["refreshSeconds"] == 120
+          news = json.loads(read("/api/news"))
+          assert isinstance(news.get("news"), list)
+          print("Friend app verified: starts empty, owner files inaccessible, AAPL and ETH live prices, two-minute interval, " + str(len(news["news"])) + " news articles")
+          PY
