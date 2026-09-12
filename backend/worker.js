@@ -33,7 +33,8 @@ export async function fetchQuotes(env={}){
  // One public aggregate request covers rate-limited or missing crypto quotes.
  if(crypto.some(([symbol])=>quotes[symbol]?.price===null)){
   try{
-   const tickers=await json('https://api.coinpaprika.com/v1/tickers');
+   const missing=crypto.filter(([symbol])=>quotes[symbol]?.price===null),tickers=[];
+   for(let i=0;i<missing.length;i+=6)tickers.push(...await Promise.all(missing.slice(i,i+6).map(async ([symbol])=>{try{return await json('https://api.coinpaprika.com/v1/tickers/'+paprikaIds[symbol]);}catch(e){quotes[symbol].error+='; CoinPaprika: '+e.message;return {};}})));
    const byId=new Map(tickers.map(q=>[q.id,q]));
    for(const [symbol] of crypto){
     if(quotes[symbol]?.price!==null)continue;
@@ -51,7 +52,7 @@ export default {
   if(request.method==='OPTIONS')return new Response(null,{headers:{...headers,'Access-Control-Allow-Methods':'GET, OPTIONS'}});
   if(request.method!=='GET')return new Response('Method not allowed',{status:405,headers});
   if(url.pathname!=='/prices')return new Response(JSON.stringify({service:'Gonzo two-minute price feed',endpoint:'/prices'}),{headers});
-  const key=new Request(url.origin+'/prices?feedVersion=3');
+  const key=new Request(url.origin+'/prices?feedVersion=4');
   const cached=await caches.default.match(key);
   if(cached){const d=await cached.json();if(Date.now()/1000-d.fetchedAt<115)return new Response(JSON.stringify(d),{headers});}
   const data=await fetchQuotes(env);
