@@ -40,3 +40,6 @@
 .holding b{font-size:11px;line-height:1.1}
 .holding div:nth-child(3) b{font-size:10px}
 }
+
+.holding div:first-child small{display:none}
+@media(min-width:751px) and (min-height:850px){.holding div:first-child small{display:block}}
