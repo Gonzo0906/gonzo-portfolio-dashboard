@@ -41,7 +41,7 @@ export async function fetchQuotes(env={}){
     if(q?.symbol?.trim().toUpperCase()!==symbol.toUpperCase()||!finite(usd?.price)||usd.price<=0||!finite(timestamp))continue;
     quotes[symbol]={price:usd.price,dailyPct:finite(usd.percent_change_24h)?usd.percent_change_24h:null,timestamp,provider:'CoinPaprika',providerId:id,name:q.name,status:'connected'};
    }
-  }catch(e){ /* Preserve the unavailable quote and original provider error. */ }
+  }catch(e){for(const [symbol] of crypto)if(quotes[symbol]?.price===null)quotes[symbol].error+='; CoinPaprika fallback: '+e.message;}
  }
  return {schema:1,fetchedAt:Date.now()/1000,startedAt:started,refreshSeconds:120,quotes,issues:Object.entries(quotes).filter(([_,q])=>q.price===null).map(([s,q])=>s+': '+(q.error||'Unavailable'))};
 }
@@ -51,7 +51,7 @@ export default {
   if(request.method==='OPTIONS')return new Response(null,{headers:{...headers,'Access-Control-Allow-Methods':'GET, OPTIONS'}});
   if(request.method!=='GET')return new Response('Method not allowed',{status:405,headers});
   if(url.pathname!=='/prices')return new Response(JSON.stringify({service:'Gonzo two-minute price feed',endpoint:'/prices'}),{headers});
-  const key=new Request(url.origin+'/prices?feedVersion=2');
+  const key=new Request(url.origin+'/prices?feedVersion=3');
   const cached=await caches.default.match(key);
   if(cached){const d=await cached.json();if(Date.now()/1000-d.fetchedAt<115)return new Response(JSON.stringify(d),{headers});}
   const data=await fetchQuotes(env);
