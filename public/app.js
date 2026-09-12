@@ -18,7 +18,26 @@ function readState(){try{return JSON.parse(localStorage.getItem(KEY)||'null');}c
 function persist(){try{localStorage.setItem(KEY,JSON.stringify({holdings,rules,history:history.slice(0,200),seen:seen?.slice(-500),newsPopups,ruleState,notificationsReadAt}));}catch{storageError=true;}}
 function normalize(raw){return {stocks:raw.stocks.map(([symbol,quantity,cost])=>({symbol,quantity,cost})),crypto:raw.crypto.map(([symbol,quantity,id,name])=>({symbol,quantity,id,name,cost:null})),metadata:raw.metadata};}
 function pageNav(id,key,count,size){const total=Math.max(1,Math.ceil(count/size));pages[key]=Math.min(pages[key],total-1);$(id).innerHTML=`<button aria-label="Previous ${key} page" ${pages[key]===0?'disabled':''}>‹</button><span>${pages[key]+1} / ${total}</span><button aria-label="Next ${key} page" ${pages[key]>=total-1?'disabled':''}>›</button>`;const bs=$(id).querySelectorAll('button');bs[0].onclick=()=>{pages[key]--;render();};bs[1].onclick=()=>{pages[key]++;render();};}
-function rows(type,id,nav){const el=$(id),list=holdings[type];el.innerHTML=list.map(h=>{const q=market.quotes[h.symbol],r=returns(h,q),st=quoteStatus(q,market.fetchedAt);const value=validNumber(h.quantity)&&validNumber(q?.price)?h.quantity*q.price:null;return `<button class="holding" data-symbol="${escape(h.symbol)}" title="Details and edit ${escape(h.symbol)}"><div><b class="asset">${escape(h.symbol)}</b><small title="${qty(h.quantity)}">${qty(h.quantity)}</small></div><div><b>${usd(q?.price,true)}</b><small class="${tone(q?.dailyPct)}">${pct(q?.dailyPct)} ${type==='stocks'?'day':'24h'}</small><small class="${st.includes('stale')||st==='unavailable'?'warning':''}">${escape(st)}</small></div><div><b>${usd(value)}</b><small class="${tone(r.pct)}">${validNumber(r.pct)?pct(r.pct)+' return':h.cost===0?'return undefined':'basis unknown'}</small>${type==='stocks'?`<small>Avg ${h.cost===null?'unknown':usd(h.cost)}</small>`:''}</div></button>`;}).join('');el.querySelectorAll('[data-symbol]').forEach(b=>b.onclick=()=>editHolding(b.dataset.symbol));}
+function rows(type,id,nav){const el=$(id),list=holdings[type];el.innerHTML=list.map(h=>{const q=market.quotes[h.symbol],r=returns(h,q),st=quoteStatus(q,market.fetchedAt);const value=validNumber(h.quantity)&&validNumber(q?.price)?h.quantity*q.price:null;return `<button class="holding" data-symbol="${escape(h.symbol)}" title="Details and edit ${escape(h.symbol)}"><div><b class="asset">${escape(h.symbol)}</b><small title="${qty(h.quantity)}">${qty(h.quantity)}</small></div><div><b>${usd(q?.price,true)}</b><small class="${tone(q?.dailyPct)}">${pct(q?.dailyPct)} ${type==='stocks'?'day':'24h'}</small><small class="${st.includes('stale')||st==='unavailable'?'warning':''}">${escape(st)}</small></div><div><b>${usd(value)}</b><small class="${tone(r.pct)}">${validNumber(r.pct)?pct(r.pct)+' return':h.cost===0?'return undefined':'basis unknown'}</small>${type==='stocks'?`<small>Avg ${h.cost===null?'unknown':usd(h.cost)}</small>`:''}</div></button>`;}).join('');el.querySelectorAll('[data-symbol]').forEach(b=>b.onclick=()=>editHolding(b.dataset.symbol));fitHoldingText(el);}
+
+function fitHoldingText(container){
+ for(const card of container.querySelectorAll('.holding')){
+  const style=getComputedStyle(card),innerWidth=card.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight),innerHeight=card.clientHeight-parseFloat(style.paddingTop)-parseFloat(style.paddingBottom);
+  const labels=[...card.querySelectorAll('b,small')].filter(el=>el.getClientRects().length&&getComputedStyle(el).display!=='none');
+  for(const label of labels){
+   const range=document.createRange();range.selectNodeContents(label);
+   const width=range.getBoundingClientRect().width,available=Math.min(innerWidth,label.parentElement.clientWidth);
+   if(width>available&&available>0)label.style.fontSize=(parseFloat(getComputedStyle(label).fontSize)*(available-1)/width)+'px';
+  }
+  for(let attempt=0;attempt<3;attempt++){
+   const groups=[...card.children].filter(el=>getComputedStyle(el).display!=='none');
+   const needed=style.display==='flex'&&style.flexDirection==='column'?groups.reduce((sum,el)=>sum+el.getBoundingClientRect().height,0)+parseFloat(style.rowGap||0)*Math.max(0,groups.length-1):Math.max(...groups.map(el=>el.getBoundingClientRect().height));
+   if(needed<=innerHeight||innerHeight<=0)break;
+   for(const label of labels)label.style.fontSize=(parseFloat(getComputedStyle(label).fontSize)*Math.max(.5,(innerHeight-1)/needed))+'px';
+  }
+ }
+}
+
 function applyPrivacy(){
  document.body.classList.toggle('concealed',concealed);
  for(const id of ['conceal','dialogConceal']){const button=$(id);button.textContent=concealed?'Show values':'Conceal';button.setAttribute('aria-pressed',String(concealed));button.setAttribute('aria-label',concealed?'Show values and prices':'Conceal values and prices');}
@@ -126,4 +145,4 @@ try{const response=await fetch('holdings.json');if(!response.ok)throw Error('Can
   pages.news=(pages.news+1)%market.news.length;
   render();
  },7000);
- new ResizeObserver(()=>render()).observe($('stocks'));render();await refresh();setInterval(()=>{refresh();},120000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});}catch(e){$('coverage').textContent=e.message;}
+ document.fonts.ready.then(()=>render());new ResizeObserver(()=>render()).observe($('stocks'));render();await refresh();setInterval(()=>{refresh();},120000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});}catch(e){$('coverage').textContent=e.message;}
