@@ -28,22 +28,6 @@ export async function fetchQuotes(env={}){
   const prices=await json(`https://api.coingecko.com/api/v3/simple/price?ids=${encodeURIComponent(ids)}&vs_currencies=usd&include_24hr_change=true&include_last_updated_at=true`,extra);
   for(const [symbol,_,id] of crypto){const q=prices[id];const ok=finite(q?.usd)&&q.usd>0&&q.last_updated_at;quotes[symbol]={price:ok?q.usd:null,dailyPct:ok?q.usd_24h_change??null:null,timestamp:ok?q.last_updated_at:null,provider:'CoinGecko',providerId:id,status:ok?'connected':'unavailable'};}
  }catch(e){for(const [symbol,_,id] of crypto)quotes[symbol]={price:null,dailyPct:null,timestamp:null,provider:'CoinGecko',providerId:id,status:'unavailable',error:e.message};}
-
- const paprikaIds={JitoSOL:'jitosol-jito-staked-sol',SOL:'sol-solana',BTC:'btc-bitcoin',DOGE:'doge-dogecoin',XRP:'xrp-xrp',SHIB:'shib-shiba-inu',ADA:'ada-cardano',HBAR:'hbar-hedera-hashgraph',FLR:'flr-flare-network',ZBCN:'zbcn-zebec-network',WLFI:'wlfi-official-world-liberty-financial',TRUMP:'trump-official-trump',PEPE:'pepe-pepe',PI:'pi2-pi-network',ETH:'eth-ethereum'};
- // One public aggregate request covers rate-limited or missing crypto quotes.
- if(crypto.some(([symbol])=>quotes[symbol]?.price===null)){
-  try{
-   const missing=crypto.filter(([symbol])=>quotes[symbol]?.price===null),tickers=[];
-   for(let i=0;i<missing.length;i+=6)tickers.push(...await Promise.all(missing.slice(i,i+6).map(async ([symbol])=>{try{return await json('https://api.coinpaprika.com/v1/tickers/'+paprikaIds[symbol]);}catch(e){quotes[symbol].error+='; CoinPaprika: '+e.message;return {};}})));
-   const byId=new Map(tickers.map(q=>[q.id,q]));
-   for(const [symbol] of crypto){
-    if(quotes[symbol]?.price!==null)continue;
-    const id=paprikaIds[symbol],q=byId.get(id),usd=q?.quotes?.USD,timestamp=Date.parse(q?.last_updated)/1000;
-    if(q?.symbol?.trim().toUpperCase()!==symbol.toUpperCase()||!finite(usd?.price)||usd.price<=0||!finite(timestamp))continue;
-    quotes[symbol]={price:usd.price,dailyPct:finite(usd.percent_change_24h)?usd.percent_change_24h:null,timestamp,provider:'CoinPaprika',providerId:id,name:q.name,status:'connected'};
-   }
-  }catch(e){for(const [symbol] of crypto)if(quotes[symbol]?.price===null)quotes[symbol].error+='; CoinPaprika fallback: '+e.message;}
- }
  return {schema:1,fetchedAt:Date.now()/1000,startedAt:started,refreshSeconds:120,quotes,issues:Object.entries(quotes).filter(([_,q])=>q.price===null).map(([s,q])=>s+': '+(q.error||'Unavailable'))};
 }
 export default {
@@ -52,7 +36,7 @@ export default {
   if(request.method==='OPTIONS')return new Response(null,{headers:{...headers,'Access-Control-Allow-Methods':'GET, OPTIONS'}});
   if(request.method!=='GET')return new Response('Method not allowed',{status:405,headers});
   if(url.pathname!=='/prices')return new Response(JSON.stringify({service:'Gonzo two-minute price feed',endpoint:'/prices'}),{headers});
-  const key=new Request(url.origin+'/prices?feedVersion=4');
+  const key=new Request(url.origin+'/prices?feedVersion=5');
   const cached=await caches.default.match(key);
   if(cached){const d=await cached.json();if(Date.now()/1000-d.fetchedAt<115)return new Response(JSON.stringify(d),{headers});}
   const data=await fetchQuotes(env);
