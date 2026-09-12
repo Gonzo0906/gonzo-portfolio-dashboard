@@ -1,0 +1,6 @@
+{
+ "name":"gonzo-minute-price-feed",
+ "main":"worker.js",
+ "compatibility_date":"2026-09-12",
+ "workers_dev":true
+}
