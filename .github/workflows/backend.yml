@@ -107,7 +107,7 @@ jobs:
           PY
       - name: Deploy quote backend with current saved credentials
         run: npx --yes wrangler@4 deploy --config backend/wrangler.jsonc
-      - name: Configure crypto market data key when provided
+      - name: Configure saved crypto market data key
         env:
           CRYPTO_KEY_INPUT: ${{ secrets.COINGECKO_DEMO_API_KEY }}
         run: |
