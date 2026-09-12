@@ -1,4 +1,5 @@
 import {valuation,returns,quoteStatus,alertValue,condition,validNumber} from './engine.js';
+import {purchaseUpdate} from './purchase.js';
 const $=id=>document.getElementById(id);
 const KEY='gonzo.portfolio.v1';
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -35,6 +36,39 @@ function render(){if(!holdings)return;const v=valuation(holdings,market.quotes),
 function dialog(title,html){$('dialog').classList.toggle('financialDialog',title!=='Market article');$('dialogTitle').textContent=title;$('dialogBody').innerHTML=html;if(!$('dialog').open)$('dialog').showModal();}
 $('closeDialog').onclick=()=>$('dialog').close();$('dialog').addEventListener('click',e=>{if(e.target===$('dialog')){const r=$('dialog').getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)$('dialog').close();}});
 function editHolding(symbol){const h=[...holdings.stocks,...holdings.crypto].find(h=>h.symbol===symbol),q=market.quotes[symbol],r=returns(h,q),isStock=holdings.stocks.includes(h);dialog(`${symbol} · details & quantity`,`<p>${escape(h.name||q?.name||symbol)}</p><div class="facts"><div><small>Current price</small>${usd(q?.price,true)}</div><div><small>Market value</small>${validNumber(h.quantity)&&validNumber(q?.price)?usd(h.quantity*q.price):'Unavailable'}</div><div><small>${isStock?'Daily change vs previous close':'Rolling 24-hour change'}</small><span class="${tone(q?.dailyPct)}">${pct(q?.dailyPct)}</span></div><div><small>Total investment return</small>${r.pct===null?h.cost===0?'Undefined: zero cost basis':'Unknown cost basis':pct(r.pct)}${r.profit!==null?'<br>'+usd(r.profit)+' unrealized P/L':''}</div></div><p class="note">${escape(q?.provider||'No provider')} · ID ${escape(q?.providerId||h.id||symbol)}<br>Provider timestamp: ${escape(time(q?.timestamp))}<br>Status: ${escape(quoteStatus(q,market.fetchedAt))}</p>${symbol==='ETH'?'<p class="warning">Screenshot value $0.07 is historical. Enter the actual ETH quantity to include it in valuation.</p>':''}<form id="editForm"><div class="fields"><label>Quantity<input id="quantity" type="number" min="0" step="any" value="${h.quantity??''}" placeholder="Quantity needed"></label>${isStock?`<label>Average cost (USD)<input id="cost" type="number" min="0" step="any" value="${h.cost??''}" placeholder="Unknown; leave blank"></label>`:'<p class="note">Crypto cost basis is unknown. No return is inferred.</p>'}${symbol==='PI'?`<label>Available PI (separate)<input id="available" type="number" min="0" step="any" value="${holdings.metadata.PI.available}"></label>`:''}</div><p class="note">Edits are stored on this device. Share quantities are never automatically adjusted for corporate actions.</p><p id="editError" class="error"></p><div class="actions"><button class="primary" type="submit">Save changes</button></div></form>`);$('editForm').onsubmit=e=>{e.preventDefault();const quantity=$('quantity').value===''?null:Number($('quantity').value),cost=isStock?($('cost').value===''?null:Number($('cost').value)):null;const available=symbol==='PI'?Number($('available').value):null;if([quantity,cost,available].some(x=>x!==null&&(!validNumber(x)||x<0))||(symbol==='PI'&&(quantity===null||available>quantity))){$('editError').textContent='Enter valid nonnegative values. Available PI cannot exceed total PI.';return;}h.quantity=quantity;h.cost=cost;if(symbol==='PI')holdings.metadata.PI.available=available;persist();render();$('dialog').close();if(storageError)toast('Browser storage is unavailable; export a backup from Settings.');};}
+
+function recordPurchase(){
+ const list=[...holdings.stocks,...holdings.crypto];
+ dialog('Record purchase',`<form id="purchaseForm"><div class="fields"><label>Stock or crypto<select id="purchaseSymbol">${list.map(h=>`<option value="${escape(h.symbol)}">${escape(h.symbol)} · ${holdings.stocks.includes(h)?'Stock':'Crypto'}</option>`).join('')}</select></label><label>Quantity purchased<input id="purchaseAmount" type="number" min="0" step="any" required placeholder="Shares or coins bought"></label><label id="startingLabel" hidden>Existing quantity before purchase<input id="purchaseStarting" type="number" min="0" step="any" placeholder="Enter actual quantity"></label><label id="purchasePriceLabel">Purchase price per share (USD, optional)<input id="purchasePrice" type="number" min="0" step="any" placeholder="Actual price paid"></label></div><p id="purchasePreview" class="note"></p><p class="note">This records a completed purchase in your dashboard. It adds to your existing quantity and saves on this device. Enter the actual fill quantity. Crypto cost basis remains unknown. Stock average cost updates only when the existing basis and purchase price are known; otherwise it becomes unknown.</p><p id="purchaseError" class="error" role="alert"></p><div class="actions"><button class="primary" id="savePurchase" type="submit">Save purchase</button></div></form>`);
+ const selected=()=>list.find(h=>h.symbol===$('purchaseSymbol').value);
+ const preview=()=>{
+  const h=selected(),stock=holdings.stocks.includes(h),unknown=h.quantity===null;
+  $('startingLabel').hidden=!unknown;$('purchaseStarting').required=unknown;
+  $('purchasePriceLabel').hidden=!stock;
+  const current=unknown?($('purchaseStarting').value===''?null:Number($('purchaseStarting').value)):h.quantity;
+  const amount=$('purchaseAmount').value===''?null:Number($('purchaseAmount').value);
+  $('purchasePreview').textContent=`Existing: ${qty(current)}${validNumber(current)&&validNumber(amount)&&amount>0?' → After purchase: '+qty(current+amount):''}`;
+ };
+ $('purchaseSymbol').onchange=()=>{$('purchaseStarting').value='';$('purchasePrice').value='';$('purchaseError').textContent='';preview();};
+ for(const id of ['purchaseAmount','purchaseStarting'])$(id).oninput=preview;
+ preview();
+ $('purchaseForm').onsubmit=e=>{
+  e.preventDefault();const h=selected(),stock=holdings.stocks.includes(h);
+  try{
+   const current=h.quantity===null?($('purchaseStarting').value===''?null:Number($('purchaseStarting').value)):h.quantity;
+   const price=stock&&$('purchasePrice').value!==''?Number($('purchasePrice').value):null;
+   const update=purchaseUpdate(h,Number($('purchaseAmount').value),price,current);
+   const next=structuredClone(holdings),target=[...next.stocks,...next.crypto].find(x=>x.symbol===h.symbol);
+   target.quantity=update.quantity;target.cost=stock?update.cost:null;
+   // Save before mutating the displayed portfolio so failed storage can be retried safely.
+   localStorage.setItem(KEY,JSON.stringify({holdings:next,rules,history:history.slice(0,200),seen:seen?.slice(-500),newsPopups,ruleState}));
+   holdings=next;storageError=false;render();$('dialog').close();
+   toast(`${h.symbol}: purchase recorded. New quantity ${qty(update.quantity)}.`);
+  }catch(err){$('purchaseError').textContent=err.message==='QuotaExceededError'?'Could not save. Free browser storage and try again.':err.message;}
+ };
+}
+$('recordPurchase').onclick=recordPurchase;
+
 function showArticle(a){const safeLink=/^https:\/\//.test(a.url)?a.url:'#';dialog('Market article',`<h3>${escape(a.title)}</h3><p>${escape(a.source)} · ${escape(time(a.published))}</p><p>${escape(a.summary)}</p><p class="note">${escape(a.summaryType)}. Relevant to a holdings watch group: ${escape(a.tags.join(', '))}.</p><p><a href="${escape(safeLink)}" target="_blank" rel="noopener noreferrer">Read original publisher article ↗</a></p><p class="note">${escape(a.linkType)}. This is refreshed news, not a placeholder watch link.</p>`);}
 function toast(message){const box=document.createElement('div');box.className='toast';box.innerHTML=`<button aria-label="Dismiss alert">✕</button>${escape(message)}`;$('toasts').prepend(box);box.querySelector('button').onclick=()=>box.remove();while($('toasts').children.length>3)$('toasts').lastChild.remove();setTimeout(()=>box.remove(),12000);}
 function logAlert(text){history.unshift({text,at:Date.now()/1000});history=history.slice(0,200);toast(text);}
