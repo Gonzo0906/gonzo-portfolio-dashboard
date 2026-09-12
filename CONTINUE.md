@@ -1,16 +1,13 @@
-# Resume checkpoint — September 12, 2026
+# Portfolio dashboard checkpoint — September 12, 2026
 
-User requested pause until tomorrow. Do not trigger further deployment until resumed.
+Live site: https://gonzo0906.github.io/gonzo-portfolio-dashboard/
 
-Working dashboard: https://gonzo0906.github.io/gonzo-portfolio-dashboard/
-Repository: Gonzo0906/gonzo-portfolio-dashboard.
+Implemented: all holdings on one screen, conceal/reveal values, automatic news cycling, local record-purchase form, notification bell and alert history, automatic feed requests every 120 seconds while open.
 
-Current site has exact transcribed holdings, local storage edits, totals with unresolved ETH, news, alerts, and pagination. Published provider snapshots refresh around 15 minutes; browser polls every 60 seconds. One-minute provider fetching is prepared but NOT active.
+Cloudflare backend deployed at https://gonzo-minute-price-feed.gonzo0906-portfolio.workers.dev/prices. Account Workers subdomain registered automatically. Dashboard feed-config.json now points to this endpoint. Direct checks returned schema 1, refreshSeconds 120, and all 24 public Yahoo stock quotes. Stock data is delayed; closed-market quotes retain their timestamps.
 
-Both CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID exist in GitHub Actions secrets. Backend run 34678174780 failed because saved account ID contains invalid characters/trailing newlines. Do not read or expose secrets. Workflow was updated and committed to trim whitespace and mask normalized values before Wrangler deployment, but no new run has been triggered. Next step: dispatch backend.yml on current main, inspect result, resolve credential errors only if still present, verify actual /prices endpoint, set public/feed-config.json to verified endpoint, deploy Pages and verify real 60-second fetching and totals.
+Remaining blocker: CoinGecko returns HTTP 429 from Cloudflare. CoinPaprika fallback was investigated but returns HTTP 402 from Cloudflare and was removed. Frontend retains available public snapshot crypto quotes with original timestamps rather than overwriting them with null. Crypto snapshots/news refresh through the existing approximately 15-minute GitHub schedule. Full two-minute crypto updates require a market-data API key. Worker already supports COINGECKO_DEMO_API_KEY as a Cloudflare Worker secret; configure this without exposing credentials in chat, files, or logs, then verify all 15 crypto prices.
 
-Latest user layout request supersedes original pagination allowance: all holdings together on one screen without flipping pages. That redesign remains pending. Do not claim it is completed. Discuss mobile readable detail tradeoff only as necessary; editing and full detail can remain dialogs.
+Deployment credential is GitHub repository Actions secret GONZO_CLOUDFLARE_TOKEN; CLOUDFLARE_ACCOUNT_ID contains the separate account identifier. The user finally saved the correct modern account token. A token was subsequently posted in chat: rotate it and update the GitHub secret via user-controlled secure entry. Never repeat token contents. No brokerage/exchange account links are needed.
 
-Prior Pages run 34677689555 passed 23 checks. Preserve exact SPCX/XRPR/JitoSOL identifiers, unknown AMC/PHUN basis, zero XRPR return undefined, PI total vs available, ETH quantity unresolved. Alerts require open dashboard. News remains separate 15-minute updates.
-
-Layout-only work resumed at user request: removed holdings pagination, all 24 stocks and 15 crypto rows are visible together. Compact phone tiles show symbol/value with complete information in dialogs. Desktop/mobile viewport CI checks passed; asset versions prevent cached old scripts. Backend work remains paused and one-minute provider fetching remains inactive.
+Validate the latest Pages workflow and live feed-config when resuming. Preserve exact initial holdings and local edits, including unresolved ETH quantity, unknown cost bases, PI availability metadata, and JitoSOL identity.
