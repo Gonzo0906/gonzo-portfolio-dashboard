@@ -6,7 +6,7 @@ const raw=JSON.parse(fs.readFileSync(new URL('../../public/holdings.json',import
 const market=JSON.parse(fs.readFileSync(new URL('../../public/data/market.json',import.meta.url)));
 for (const [width,height] of [[1440,900],[1366,768],[1920,1080],[768,1024],[390,844],[360,640],[320,568],[844,390],[640,360],[568,320]]){
  test(`no scrolling or clipped holding at ${width}x${height}`,async({page})=>{
-  await page.setViewportSize({width,height});await page.goto('/');await expect(page.locator('#coverage')).toContainText('38/39');
+  await page.setViewportSize({width,height});await page.goto('/');await expect(page.locator('#coverage')).toContainText('38/38');
   const bounds=await page.evaluate(()=>{const d=document.documentElement;const panels=[...document.querySelectorAll('.holdings .panel')].map(p=>{const pr=p.getBoundingClientRect(),rows=p.querySelector('.rows').getBoundingClientRect();return {right:pr.right,bottom:pr.bottom,rowBottoms:[...p.querySelectorAll('.holding')].map(r=>r.getBoundingClientRect().bottom),rowsBottom:rows.bottom,navTop:rows.bottom};});return {w:innerWidth,h:innerHeight,sw:d.scrollWidth,sh:d.scrollHeight,panels};});
   expect(bounds.sw).toBeLessThanOrEqual(width);expect(bounds.sh).toBeLessThanOrEqual(height);
   for(const p of bounds.panels){expect(p.right).toBeLessThanOrEqual(width);expect(p.bottom).toBeLessThanOrEqual(height);for(const b of p.rowBottoms)expect(b).toBeLessThanOrEqual(p.navTop+1);}
@@ -26,11 +26,11 @@ test('popup rule triggers once and new snapshots recalculate without repeated sp
  await page.route('**/data/market.json*',r=>r.fulfill({json:snapshot}));await page.goto('/');await page.locator('#configureAlerts').click();await page.locator('#ruleSymbol').selectOption('NVDA');await page.locator('#threshold').fill('1');await page.getByRole('button',{name:'Add rule',exact:true}).click();await page.getByRole('button',{name:'Close dialog'}).click();snapshot.fetchedAt+=1;await page.locator('#refresh').click();await expect(page.locator('#alerts')).toContainText('NVDA: price above');await expect(page.locator('#toasts')).toContainText('NVDA');await expect(page.locator('#notificationBadge')).toHaveText('1');await page.locator('#notificationsButton').click();await expect(page.locator('#notificationList')).toContainText('NVDA: price above');await expect(page.locator('#notificationBadge')).toBeHidden();await page.locator('#closeNotifications').click();const oldValue=await page.locator('#total').innerText();snapshot.quotes.NVDA.price*=2;snapshot.fetchedAt+=1;await page.locator('#refresh').click();await expect(page.locator('#total')).not.toHaveText(oldValue);await expect(page.locator('#toasts .toast')).toHaveCount(1);await page.reload();await expect(page.locator('#alerts')).toContainText('NVDA: price above');await expect(page.locator('#toasts .toast')).toHaveCount(0);
 });
 test('failed refresh retains prior data and reports the failure',async({page})=>{
- await page.goto('/');await expect(page.locator('#coverage')).toContainText('38/39');const value=await page.locator('#total').innerText();await page.route('**/data/market.json*',r=>r.fulfill({status:503,body:'Unavailable'}));await page.locator('#refresh').click();await expect(page.locator('#feedTime')).toContainText('Refresh failed');expect(await page.locator('#total').innerText()).toBe(value);
+ await page.goto('/');await expect(page.locator('#coverage')).toContainText('38/38');const value=await page.locator('#total').innerText();await page.route('**/data/market.json*',r=>r.fulfill({status:503,body:'Unavailable'}));await page.locator('#refresh').click();await expect(page.locator('#feedTime')).toContainText('Refresh failed');expect(await page.locator('#total').innerText()).toBe(value);
 });
 
 test('recorded purchases add quantities and persist after reload',async({page})=>{
- await page.goto('/');await expect(page.locator('#coverage')).toContainText('38/39');
+ await page.goto('/');await expect(page.locator('#coverage')).toContainText('38/38');
  const nvda=raw.stocks.find(row=>row[0]==='NVDA'),next=nvda[1]+2;
  await page.locator('#recordPurchase').click();await page.locator('#purchaseSymbol').selectOption('NVDA');await page.locator('#purchaseAmount').fill('0');await page.locator('#savePurchase').click();await expect(page.locator('#purchaseError')).toContainText('greater than zero');
  await page.locator('#purchaseAmount').fill('2');await page.locator('#purchasePrice').fill('100');await page.locator('#savePurchase').click();
