@@ -24,6 +24,8 @@ function fitHoldingText(container){
  for(const card of container.querySelectorAll('.holding')){
   const style=getComputedStyle(card),innerWidth=card.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight),innerHeight=card.clientHeight-parseFloat(style.paddingTop)-parseFloat(style.paddingBottom);
   const labels=[...card.querySelectorAll('b,small')].filter(el=>el.getClientRects().length&&getComputedStyle(el).display!=='none');
+  for(const group of card.children){group.style.fontSize='0px';group.style.lineHeight='0';}
+  for(const label of labels){label.style.display='block';label.style.lineHeight='1.3';}
   for(const label of labels){
    const range=document.createRange();range.selectNodeContents(label);
    const width=range.getBoundingClientRect().width,available=Math.min(innerWidth,label.parentElement.clientWidth);
