@@ -11,3 +11,7 @@ Remaining blocker: CoinGecko returns HTTP 429 from Cloudflare. CoinPaprika fallb
 Deployment credential is GitHub repository Actions secret GONZO_CLOUDFLARE_TOKEN; CLOUDFLARE_ACCOUNT_ID contains the separate account identifier. The user finally saved the correct modern account token. A token was subsequently posted in chat: rotate it and update the GitHub secret via user-controlled secure entry. Never repeat token contents. No brokerage/exchange account links are needed.
 
 Validate the latest Pages workflow and live feed-config when resuming. Preserve exact initial holdings and local edits, including unresolved ETH quantity, unknown cost bases, PI availability metadata, and JitoSOL identity.
+
+## Crypto activation — September 12, 2026 16:08 UTC
+
+The user saved COINGECKO_DEMO_API_KEY in GitHub Actions. Backend workflow securely uploads it as the matching Cloudflare Worker secret using stdin. Backend run 34704281803 succeeded. Direct public feed verification returned all 39 positive quotes (24 stocks and 15 crypto), schema 1, refreshSeconds 120, and zero issues. This resolves the crypto provider blocker described above. Dashboard polls the same endpoint every two minutes while open. No brokerage account connection. Keep provider keys private; keys previously posted in chat should be replaced. Check the latest Pages build after the updated active-status text.
