@@ -18,4 +18,8 @@ jobs:
         run: |
           test -n "$CLOUDFLARE_API_TOKEN" || { echo 'Missing CLOUDFLARE_API_TOKEN Actions secret'; exit 1; }
           test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo 'Missing CLOUDFLARE_ACCOUNT_ID Actions secret'; exit 1; }
+          export CLOUDFLARE_API_TOKEN="$(python -c 'import os; print(os.environ["CLOUDFLARE_API_TOKEN"].strip())')"
+          export CLOUDFLARE_ACCOUNT_ID="$(python -c 'import os; print(os.environ["CLOUDFLARE_ACCOUNT_ID"].strip())')"
+          echo "::add-mask::$CLOUDFLARE_API_TOKEN"
+          echo "::add-mask::$CLOUDFLARE_ACCOUNT_ID"
           npx --yes wrangler@4 deploy --config backend/wrangler.jsonc
