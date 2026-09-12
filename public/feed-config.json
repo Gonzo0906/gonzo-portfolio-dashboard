@@ -1,1 +1,4 @@
-{"priceEndpoint":null,"priceRefreshSeconds":120}
+{
+  "priceEndpoint": "https://gonzo-minute-price-feed.gonzo0906-portfolio.workers.dev/prices",
+  "priceRefreshSeconds": 120
+}
