@@ -27,5 +27,13 @@ The user completed sign-in. Pages was enabled through authenticated settings, th
 
 The HTTPS dashboard and data/market.json returned successfully. Deployed initial fetchedAt: 1789193297.146073. All 39 prices returned and 38 holdings were valued; ETH remains quantity needed. Hosted subtotal matched the price/quantity calculation. Cloud browser dimensions were 1363x936 with scrollWidth 1363 and scrollHeight 936. Stock/crypto pagination was checked on the hosted page, including exact SPCX and separate JitoSOL/SOL and PI/ETH rows.
 
-A second snapshot publication and automatic-page refresh verification are in progress. Target schedule is every 15 minutes; the open page polls every 60 seconds. GitHub scheduling delays are possible, and no specific future run timing is guaranteed. Popup alerts require the dashboard to remain open.
+A later snapshot was verified at fetchedAt 1789193779.0177, newer than the initial 1789193297.146073. The already-open hosted dashboard automatically received it and showed its updated subtotal/time without a page reload. Target schedule is every 15 minutes; the open page polls every 60 seconds. GitHub scheduling delays are possible, and no specific future run timing is guaranteed. Popup alerts require the dashboard to remain open.
 
+
+## One-minute price request: prepared, activation blocked
+
+Commit 29360d18c1639afdf5ee0be96c2a83feb5a6b2bb deployed successfully in GitHub Actions run 34677689555. All 23 checks passed: four engine, three Python provider, and sixteen UI tests. The additional UI tests verify that a configured backend is fetched on the real 60-second page timer and recalculates valuation, and that an unconfigured backend does not claim one-minute provider updates. Backend Wrangler dry-run build succeeded.
+
+GitHub schedules have a five-minute minimum. The Yahoo stock feed returned no browser CORS header, while CoinGecko returned Access-Control-Allow-Origin: *. The prepared fixed-asset Worker lets the open page fetch both stock and crypto quotes every 60 seconds, retaining provider timestamps/delays. News remains on the existing 15-minute refresh.
+
+Activation requires Cloudflare account hosting credentials in encrypted repository Actions secrets: CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID. Authenticated GitHub settings confirmed there are currently no repository secrets. No Cloudflare account connection was available. Backend deployment and endpoint verification remain blocked until credentials are supplied. public/feed-config.json intentionally retains priceEndpoint: null, so the active dashboard truthfully uses its 15-minute snapshot fallback. No active one-minute provider fetching is claimed.
