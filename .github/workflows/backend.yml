@@ -147,7 +147,15 @@ jobs:
           import urllib.request, urllib.error, json, time
           base = "https://gonzo-portfolio-for-friends.gonzo0906-portfolio.workers.dev"
           def read(path):
-              with urllib.request.urlopen(base + path, timeout=45) as response:
+              request = urllib.request.Request(base + path, headers={"User-Agent": "Mozilla/5.0 GonzoAppCheck/1.0"})
+              try:
+                  response = urllib.request.urlopen(request, timeout=45)
+              except urllib.error.HTTPError as error:
+                  if path == "/":
+                      print("Public address HTTP status:", error.code)
+                      print("Public response:", error.read().decode(errors="replace")[:1500])
+                  raise
+              with response as response:
                   return response.read().decode()
           html = read("/")
           assert "addHolding" in html and "shareDashboard" in html
