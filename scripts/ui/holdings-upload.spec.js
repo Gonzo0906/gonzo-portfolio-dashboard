@@ -22,13 +22,13 @@ test('uploads screenshots, reviews totals and replaces quantities without double
  await expect(page.locator('[data-symbol="NVDA"]')).toContainText('52.52645');
  await page.reload();await expect(page.locator('[data-symbol="SOL"]')).toContainText('15.934');
  await page.getByRole('button',{name:'Update holdings from screenshots'}).click();
- await page.locator('#screenshotText').fill('NVDA 52.52645 shares\nSOL 15.934 SOL');await page.locator('#parseScreenshotText').click();await page.locator('#confirmScreenshotTotals').check();await page.locator('#saveScreenshotTotals').click();
+ await page.getByText('Review or correct extracted text',{exact:true}).click();await page.locator('#screenshotText').fill('NVDA 52.52645 shares\nSOL 15.934 SOL');await page.locator('#parseScreenshotText').click();await page.locator('#confirmScreenshotTotals').check();await page.locator('#saveScreenshotTotals').click();
  await expect(page.locator('[data-symbol="NVDA"]')).toContainText('52.52645');
  const state=await page.evaluate(()=>JSON.parse(localStorage.getItem('gonzo.portfolio.v1')));expect(state.holdings.stocks.find(h=>h.symbol==='NVDA').cost).toBe(14.2);
 });
 test('conflicting reads need correction and PI validation prevents partial writes',async({page})=>{
  await page.goto('/');await page.getByRole('button',{name:'Update holdings from screenshots'}).click();
- await page.locator('#screenshotText').fill('NVDA 52 shares\nNVDA 53 shares\nPI\nTotal balance 1,000');await page.locator('#parseScreenshotText').click();
+ await page.getByText('Review or correct extracted text',{exact:true}).click();await page.locator('#screenshotText').fill('NVDA 52 shares\nNVDA 53 shares\nPI\nTotal balance 1,000');await page.locator('#parseScreenshotText').click();
  await expect(page.getByRole('checkbox',{name:'Update NVDA',exact:true})).not.toBeChecked();
  await page.getByRole('spinbutton',{name:'New total NVDA',exact:true}).fill('53');await page.locator('#confirmScreenshotTotals').check();await page.locator('#saveScreenshotTotals').click();
  await expect(page.locator('#uploadError')).toContainText('Available PI cannot exceed');
