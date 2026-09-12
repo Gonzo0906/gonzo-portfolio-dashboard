@@ -1,0 +1,39 @@
+
+body.mobileView{height:100dvh;overflow:hidden}
+.mobileView #dashboard{max-width:640px;height:100dvh;padding:8px 8px max(5px,env(safe-area-inset-bottom));grid-template-rows:76px 76px minmax(0,1fr) 84px 28px;gap:6px}
+.mobileView header{display:grid;grid-template-rows:25px 44px;gap:5px;justify-content:stretch}
+.mobileView .brand .logo{display:none}.mobileView .brand h1{font-size:20px}.mobileView .brand h1 span{display:inline;font-size:16px}.mobileView .brand p{display:none}
+.mobileView .tools{display:grid;grid-template-columns:44px 1fr 1.2fr 1.05fr 44px 44px;gap:4px}
+.mobileView .tools button{min-height:44px;padding:4px;font-size:11px;border-radius:10px}.mobileView .tools span{display:none}.mobileView #recordPurchase,.mobileView #conceal{font-size:11px;padding:4px}.mobileView .notificationBell{min-width:0}
+.mobileView .overview{grid-template-columns:1.3fr 1fr 1fr;gap:5px}.mobileView .overview article{padding:8px 7px;gap:4px;border-radius:11px}
+.mobileView .overview strong{font-size:clamp(15px,4.7vw,23px)}.mobileView .overview small{font-size:9px;letter-spacing:.3px}.mobileView .overview span{font-size:10px}
+.mobileView .holdings{grid-template-columns:1fr;grid-template-rows:3fr 2fr;gap:6px}
+.mobileView .panelhead{min-height:28px;padding:4px 9px}.mobileView .panelhead h2{font-size:14px;gap:7px}.mobileView .panelhead small{font-size:10px}.mobileView .badge{font-size:9px;padding:2px 5px}
+.mobileView .columnlabels{display:none}
+.mobileView .stock .rows{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(6,minmax(0,1fr))}
+.mobileView .crypto .rows{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr))}
+.mobileView .rows{gap:3px;padding:3px}
+.mobileView .holding{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;padding:3px 2px;border-radius:7px}
+.mobileView .holding div:first-child{display:block;text-align:center}.mobileView .holding div:nth-child(3){text-align:center}
+.mobileView .holding .asset,.mobileView .stock .holding .asset{font-size:17px}.mobileView .holding div:nth-child(3) b,.mobileView .stock .holding div:nth-child(3) b{font-size:15px}
+.mobileView .holding div:first-child small{display:block;font-size:10px;max-width:100%}
+.mobileView .bottom{gap:6px}.mobileView .bottom .panelhead{min-height:26px;padding:3px 8px}.mobileView .bottom .panelhead h2{font-size:12px}.mobileView #configureAlerts{font-size:10px;padding:3px 7px}
+.mobileView #news,.mobileView #alerts{padding:0 8px;font-size:11px}.mobileView .newsitem b{font-size:11px;line-height:1.25;-webkit-line-clamp:2}.mobileView .newsitem small{display:none}
+.mobileView .alertitem{font-size:10px;line-height:1.25}.mobileView .alertitem small{display:none}.mobileView .empty{font-size:10px;line-height:1.25}
+.mobileView .bottom nav{min-height:22px;padding:0 5px;font-size:10px;gap:7px}.mobileView .bottom nav button{padding:0 8px}
+.mobileView footer{gap:5px;min-width:0}.mobileView #creatorCredit{font-size:12px;padding:3px 6px}.mobileView #feedTime{font-size:9px}.mobileView footer button{font-size:9px;padding:4px}
+.mobileView #notificationDropdown{top:88px}.mobileView dialog{width:calc(100vw - 16px);max-width:640px;padding:14px}.mobileView .dialoghead{gap:7px}.mobileView .dialoghead h2{font-size:18px}
+@media(max-height:700px){.mobileView .holding div:first-child small{display:none}.mobileView .holding .asset,.mobileView .stock .holding .asset{font-size:16px}.mobileView .holding div:nth-child(3) b,.mobileView .stock .holding div:nth-child(3) b{font-size:14px}}
+@media(orientation:landscape) and (max-height:500px){.mobileView #dashboard{max-width:1000px;grid-template-rows:46px 52px minmax(0,1fr) 66px 24px;padding-top:3px;gap:4px}.mobileView header{display:flex}.mobileView .brand h1{font-size:17px}.mobileView .brand h1 span{display:none}.mobileView .tools{width:75%;grid-template-columns:40px 1fr 1fr 1fr 40px 40px}.mobileView .tools button{min-height:40px}.mobileView .holdings{grid-template-columns:3fr 2fr;grid-template-rows:1fr}.mobileView .holding{padding:1px;gap:0}.mobileView .holding div:first-child small{display:none}.mobileView .holding .asset,.mobileView .stock .holding .asset{font-size:14px}.mobileView .holding div:nth-child(3) b,.mobileView .stock .holding div:nth-child(3) b{font-size:12px}.mobileView .overview article{padding:3px 8px;gap:2px}.mobileView .overview strong{font-size:18px}.mobileView .bottom .panelhead{min-height:22px}.mobileView .newsitem b{-webkit-line-clamp:1}}
+
+.mobileView .tools{grid-template-columns:1fr 1.2fr 44px 68px}
+.mobileView #addHolding span{display:inline}.mobileView #addHolding{font-size:12px}
+.mobileView #mobileMore{position:relative;min-width:0}
+.mobileView #mobileMore summary{list-style:none;min-height:44px;border:1px solid var(--line);border-radius:10px;background:#192339;display:grid;place-items:center;font-size:12px;cursor:pointer}
+.mobileView #mobileMore summary::-webkit-details-marker{display:none}
+.mobileView .mobileMenu{position:fixed;z-index:7;top:86px;right:max(8px,calc((100vw - 624px)/2));width:230px;padding:7px;background:#131e31;border:1px solid #425575;border-radius:12px;box-shadow:0 12px 35px #0009;display:grid;gap:5px}
+.mobileView .mobileMenu button{min-height:44px;text-align:left;padding:8px 12px;font-size:13px}
+.mobileView .mobileMenu span{display:inline}
+.mobileView .welcomeCard{gap:8px;padding:7px}.mobileView .welcomeCard h3{font-size:16px}.mobileView .welcomeCard p{font-size:11px}.mobileView .welcomeCard button{min-height:40px;font-size:12px}
+@media(max-height:700px){.mobileView .welcomeCard p{display:none}.mobileView .welcomeCard h3{font-size:12px}.mobileView .welcomeCard{gap:5px}.mobileView .welcomeCard button{min-height:30px}}
+@media(orientation:landscape) and (max-height:500px){.mobileView .tools{width:75%;grid-template-columns:1fr 1.2fr 40px 68px}.mobileView #mobileMore summary{min-height:40px}.mobileView .mobileMenu{top:48px;max-height:calc(100dvh - 55px);overflow:auto}}
