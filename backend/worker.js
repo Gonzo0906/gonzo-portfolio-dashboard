@@ -36,7 +36,7 @@ export default {
   if(request.method==='OPTIONS')return new Response(null,{headers:{...headers,'Access-Control-Allow-Methods':'GET, OPTIONS'}});
   if(request.method!=='GET')return new Response('Method not allowed',{status:405,headers});
   if(url.pathname!=='/prices')return new Response(JSON.stringify({service:'Gonzo two-minute price feed',endpoint:'/prices'}),{headers});
-  const key=new Request(url.origin+'/prices?feedVersion=5');
+  const key=new Request(url.origin+'/prices?feedVersion=6');
   const cached=await caches.default.match(key);
   if(cached){const d=await cached.json();if(Date.now()/1000-d.fetchedAt<115)return new Response(JSON.stringify(d),{headers});}
   const data=await fetchQuotes(env);

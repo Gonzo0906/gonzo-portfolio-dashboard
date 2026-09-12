@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['backend/**', '.github/workflows/backend.yml']
+    paths: ['backend/**', 'public/holdings.json', '.github/workflows/backend.yml']
 permissions:
   contents: read
 jobs:

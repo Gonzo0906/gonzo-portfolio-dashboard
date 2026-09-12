@@ -1,1 +1,1 @@
-{"name":"gonzo-portfolio-dashboard","private":true,"type":"module","scripts":{"test":"node --test scripts/engine.test.js","start":"python3 -m http.server 8000 --directory public"},"devDependencies":{"@playwright/test":"^1.63.0"}}
+{"name":"gonzo-portfolio-dashboard","private":true,"type":"module","scripts":{"test":"node --test scripts/engine.test.js scripts/holdings-upload.test.js","start":"python3 -m http.server 8000 --directory public"},"devDependencies":{"@playwright/test":"^1.63.0"}}
