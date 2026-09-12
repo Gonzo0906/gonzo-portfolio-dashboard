@@ -43,3 +43,5 @@
 
 .holding div:first-child small{display:none}
 @media(min-width:751px) and (min-height:850px){.holding div:first-child small{display:block}}
+
+.holding b,.holding small{line-height:1}

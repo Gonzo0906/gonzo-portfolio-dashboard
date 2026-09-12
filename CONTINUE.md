@@ -12,3 +12,5 @@ Both CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID exist in GitHub Actions secr
 Latest user layout request supersedes original pagination allowance: all holdings together on one screen without flipping pages. That redesign remains pending. Do not claim it is completed. Discuss mobile readable detail tradeoff only as necessary; editing and full detail can remain dialogs.
 
 Prior Pages run 34677689555 passed 23 checks. Preserve exact SPCX/XRPR/JitoSOL identifiers, unknown AMC/PHUN basis, zero XRPR return undefined, PI total vs available, ETH quantity unresolved. Alerts require open dashboard. News remains separate 15-minute updates.
+
+Layout-only work resumed at user request: removed holdings pagination, all 24 stocks and 15 crypto rows are visible together. Compact phone tiles show symbol/value with complete information in dialogs. Desktop/mobile viewport CI checks passed; asset versions prevent cached old scripts. Backend work remains paused and one-minute provider fetching remains inactive.
