@@ -77,5 +77,33 @@ jobs:
               output.write("CLOUDFLARE_API_TOKEN=" + token + "\n")
           print("Deployment account identified successfully")
           PY
+      - name: Register the price feed address if needed
+        run: |
+          python - <<'PY'
+          import os, json, urllib.request, urllib.error
+          url = "https://api.cloudflare.com/client/v4/accounts/" + os.environ["CLOUDFLARE_ACCOUNT_ID"] + "/workers/subdomain"
+          headers = {"Authorization": "Bearer " + os.environ["CLOUDFLARE_API_TOKEN"], "Content-Type": "application/json"}
+          def request(method, body=None):
+              req = urllib.request.Request(url, headers=headers, method=method, data=json.dumps(body).encode() if body else None)
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as response:
+                      return json.load(response)
+              except urllib.error.HTTPError as error:
+                  try:
+                      return json.load(error)
+                  except ValueError:
+                      raise SystemExit("Cloudflare address setup failed: HTTP " + str(error.code))
+          data = request("GET")
+          if data.get("success") and data.get("result", {}).get("subdomain"):
+              print("Existing Workers address preserved")
+          else:
+              codes = {error.get("code") for error in data.get("errors", [])}
+              if codes - {10007}:
+                  raise SystemExit("Cloudflare address lookup failed; codes: " + str(sorted(codes)))
+              data = request("PUT", {"subdomain": "gonzo0906-portfolio"})
+              if not data.get("success"):
+                  raise SystemExit("Cloudflare address registration failed; codes: " + str([error.get("code") for error in data.get("errors", [])]))
+              print("Workers address registered successfully")
+          PY
       - name: Deploy quote backend with current saved credentials
         run: npx --yes wrangler@4 deploy --config backend/wrangler.jsonc
