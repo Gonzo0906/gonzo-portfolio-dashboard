@@ -1,0 +1,1014 @@
+{
+  "schema": 1,
+  "fetchedAt": 1789192196.409203,
+  "refreshMinutes": 15,
+  "quotes": {
+    "VOO": {
+      "price": 702.56,
+      "dailyPct": 0.8483421199774188,
+      "timestamp": 1789156800,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "VOO",
+      "name": "Vanguard S&P 500 ETF",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 696.6500244140625
+    },
+    "ETN": {
+      "price": 425.37,
+      "dailyPct": 3.96431781632125,
+      "timestamp": 1789156803,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "ETN",
+      "name": "Eaton Corporation plc",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 409.1499938964844
+    },
+    "ISRG": {
+      "price": 369.15,
+      "dailyPct": 2.4108108391843075,
+      "timestamp": 1789156801,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "ISRG",
+      "name": "Intuitive Surgical, Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 360.4599914550781
+    },
+    "TSLA": {
+      "price": 365.44,
+      "dailyPct": 0.5171092678047495,
+      "timestamp": 1789156800,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "TSLA",
+      "name": "Tesla, Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 363.55999755859375
+    },
+    "CEG": {
+      "price": 284.75,
+      "dailyPct": -0.4266186017747975,
+      "timestamp": 1789156801,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "CEG",
+      "name": "Constellation Energy Corporation",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 285.9700012207031
+    },
+    "AMZN": {
+      "price": 256.78,
+      "dailyPct": 1.941323840644893,
+      "timestamp": 1789156801,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 251.88999938964844
+    },
+    "MRVL": {
+      "price": 236.1,
+      "dailyPct": 4.027138269191077,
+      "timestamp": 1789156801,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "MRVL",
+      "name": "Marvell Technology, Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 226.9600067138672
+    },
+    "NVDA": {
+      "price": 218.29,
+      "dailyPct": -0.032057432751375625,
+      "timestamp": 1789156800,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "NVDA",
+      "name": "NVIDIA Corporation",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 218.36000061035156
+    },
+    "QCOM": {
+      "price": 181.97,
+      "dailyPct": 2.877654328740964,
+      "timestamp": 1789156800,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "QCOM",
+      "name": "QUALCOMM Incorporated",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 176.8800048828125
+    },
+    "PLTR": {
+      "price": 167.23,
+      "dailyPct": 0.8259974584631236,
+      "timestamp": 1789156800,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "PLTR",
+      "name": "Palantir Technologies Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 165.86000061035156
+    },
+    "SPCX": {
+      "price": 151.21,
+      "dailyPct": 2.0448154096271542,
+      "timestamp": 1789156800,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "SPCX",
+      "name": "Space Exploration Technologies Corp.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 148.17999267578125
+    },
+    "NOW": {
+      "price": 132.53,
+      "dailyPct": 1.0368238545700237,
+      "timestamp": 1789156803,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "NOW",
+      "name": "ServiceNow, Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 131.1699981689453
+    },
+    "HOOD": {
+      "price": 112.57,
+      "dailyPct": -0.6706095639066989,
+      "timestamp": 1789156801,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "HOOD",
+      "name": "Robinhood Markets, Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 113.33000183105469
+    },
+    "NFLX": {
+      "price": 77.4,
+      "dailyPct": 1.8287038872572214,
+      "timestamp": 1789156800,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "NFLX",
+      "name": "Netflix, Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 76.01000213623047
+    },
+    "BOTZ": {
+      "price": 35.28,
+      "dailyPct": 1.4959772830157592,
+      "timestamp": 1789156801,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "BOTZ",
+      "name": "Global X Robotics & Artificial Intelligence ETF",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 34.7599983215332
+    },
+    "SOFI": {
+      "price": 17.32,
+      "dailyPct": 0.6391686309070721,
+      "timestamp": 1789156800,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "SOFI",
+      "name": "SoFi Technologies, Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 17.209999084472656
+    },
+    "QBTS": {
+      "price": 16.8,
+      "dailyPct": 0.8403370580440717,
+      "timestamp": 1789156800,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "QBTS",
+      "name": "D-Wave Quantum Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 16.65999984741211
+    },
+    "RGTI": {
+      "price": 15.27,
+      "dailyPct": 0.7255946813658376,
+      "timestamp": 1789156800,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "RGTI",
+      "name": "Rigetti Computing, Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 15.15999984741211
+    },
+    "XRPR": {
+      "price": 11.08,
+      "dailyPct": 0.10842212134980489,
+      "timestamp": 1789156634,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "XRPR",
+      "name": "REX-Osprey\u2122 XRP ETF",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 11.067999839782715
+    },
+    "RCAT": {
+      "price": 7.96,
+      "dailyPct": -1.485147584642732,
+      "timestamp": 1789156800,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "RCAT",
+      "name": "Red Cat Holdings, Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 8.079999923706055
+    },
+    "QUBT": {
+      "price": 7.99,
+      "dailyPct": 2.1739108005992103,
+      "timestamp": 1789156800,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "QUBT",
+      "name": "Quantum Computing Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 7.820000171661377
+    },
+    "LCID": {
+      "price": 4.22,
+      "dailyPct": 0.9569419450736083,
+      "timestamp": 1789156801,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "LCID",
+      "name": "Lucid Group, Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 4.179999828338623
+    },
+    "AMC": {
+      "price": 2.46,
+      "dailyPct": 4.237292769036949,
+      "timestamp": 1789156803,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "AMC",
+      "name": "AMC Entertainment Holdings, Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 2.359999895095825
+    },
+    "PHUN": {
+      "price": 2.03,
+      "dailyPct": 0.4950504538569156,
+      "timestamp": 1789156800,
+      "provider": "Yahoo Finance public chart",
+      "providerId": "PHUN",
+      "name": "Phunware, Inc.",
+      "status": "delayed",
+      "sessionEnd": 1789156800,
+      "previousClose": 2.0199999809265137
+    },
+    "JitoSOL": {
+      "price": 132.19,
+      "dailyPct": 2.0199460013401125,
+      "timestamp": 1789192140,
+      "provider": "CoinGecko",
+      "providerId": "jito-staked-sol",
+      "name": "Jito Staked SOL",
+      "status": "connected"
+    },
+    "SOL": {
+      "price": 101.62,
+      "dailyPct": 1.8628119091680402,
+      "timestamp": 1789192140,
+      "provider": "CoinGecko",
+      "providerId": "solana",
+      "name": "Solana",
+      "status": "connected"
+    },
+    "BTC": {
+      "price": 77228,
+      "dailyPct": 0.08873718695560778,
+      "timestamp": 1789192130,
+      "provider": "CoinGecko",
+      "providerId": "bitcoin",
+      "name": "Bitcoin",
+      "status": "connected"
+    },
+    "DOGE": {
+      "price": 0.08445,
+      "dailyPct": 0.44821812966115365,
+      "timestamp": 1789192150,
+      "provider": "CoinGecko",
+      "providerId": "dogecoin",
+      "name": "Dogecoin",
+      "status": "connected"
+    },
+    "XRP": {
+      "price": 1.36,
+      "dailyPct": 1.1727060371415081,
+      "timestamp": 1789192150,
+      "provider": "CoinGecko",
+      "providerId": "ripple",
+      "name": "XRP",
+      "status": "connected"
+    },
+    "SHIB": {
+      "price": 5.23e-06,
+      "dailyPct": 2.3843650398762852,
+      "timestamp": 1789192150,
+      "provider": "CoinGecko",
+      "providerId": "shiba-inu",
+      "name": "Shiba Inu",
+      "status": "connected"
+    },
+    "ADA": {
+      "price": 0.207922,
+      "dailyPct": -0.9244213889860173,
+      "timestamp": 1789192140,
+      "provider": "CoinGecko",
+      "providerId": "cardano",
+      "name": "Cardano",
+      "status": "connected"
+    },
+    "HBAR": {
+      "price": 0.074303,
+      "dailyPct": -1.5815959417139611,
+      "timestamp": 1789192140,
+      "provider": "CoinGecko",
+      "providerId": "hedera-hashgraph",
+      "name": "Hedera",
+      "status": "connected"
+    },
+    "FLR": {
+      "price": 0.00639817,
+      "dailyPct": 1.1549675638632517,
+      "timestamp": 1789192140,
+      "provider": "CoinGecko",
+      "providerId": "flare-networks",
+      "name": "Flare",
+      "status": "connected"
+    },
+    "ZBCN": {
+      "price": 0.00179452,
+      "dailyPct": -0.7731643542951334,
+      "timestamp": 1789192140,
+      "provider": "CoinGecko",
+      "providerId": "zebec-network",
+      "name": "Zebec Network",
+      "status": "connected"
+    },
+    "WLFI": {
+      "price": 0.055119,
+      "dailyPct": -1.6532266789923165,
+      "timestamp": 1789192140,
+      "provider": "CoinGecko",
+      "providerId": "world-liberty-financial",
+      "name": "World Liberty Financial",
+      "status": "connected"
+    },
+    "TRUMP": {
+      "price": 1.98,
+      "dailyPct": 0.09405611496699312,
+      "timestamp": 1789192140,
+      "provider": "CoinGecko",
+      "providerId": "official-trump",
+      "name": "Official Trump",
+      "status": "connected"
+    },
+    "PEPE": {
+      "price": 3.33e-06,
+      "dailyPct": 0.3619244658972481,
+      "timestamp": 1789192140,
+      "provider": "CoinGecko",
+      "providerId": "pepe",
+      "name": "Pepe",
+      "status": "connected"
+    },
+    "PI": {
+      "price": 0.094415,
+      "dailyPct": -2.2239961658464122,
+      "timestamp": 1789192150,
+      "provider": "CoinGecko",
+      "providerId": "pi-network",
+      "name": "Pi Network",
+      "status": "connected"
+    },
+    "ETH": {
+      "price": 2511.69,
+      "dailyPct": 1.892630792790529,
+      "timestamp": 1789192150,
+      "provider": "CoinGecko",
+      "providerId": "ethereum",
+      "name": "Ethereum",
+      "status": "connected"
+    }
+  },
+  "news": [
+    {
+      "id": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQeGhHM2FIcXdzYmxXV0dTNFN2OTJGOGhNMkttSkpPZE8yd2JyRXJyLU9DZ2JWeVgwM3h3UHpsVFBnSzBCd3NyVUpoUFNLTFk3ZVZWcHg5NXZfdnhLXzd2azgwVTlZaEo2VTdrcGs5eVk4azd6Q0x2dWxvWlEweXFxLVhYSnFYQnMxZzJ2NmNJUVdNUjQ?oc=5",
+      "title": "World Liberty Financial Price (WLFI INR) - LatestLY",
+      "source": "LatestLY",
+      "published": 1789178280.0,
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQeGhHM2FIcXdzYmxXV0dTNFN2OTJGOGhNMkttSkpPZE8yd2JyRXJyLU9DZ2JWeVgwM3h3UHpsVFBnSzBCd3NyVUpoUFNLTFk3ZVZWcHg5NXZfdnhLXzd2azgwVTlZaEo2VTdrcGs5eVk4azd6Q0x2dWxvWlEweXFxLVhYSnFYQnMxZzJ2NmNJUVdNUjQ?oc=5",
+      "tags": [
+        "HBAR",
+        "FLR",
+        "ZBCN",
+        "WLFI",
+        "TRUMP",
+        "PEPE",
+        "PI",
+        "ETH"
+      ],
+      "summary": "Headline summary: World Liberty Financial Price (WLFI INR)",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRFhHZWM5c2RUcXlkUkNYcHhKVVhoWXBHZUdoXzh2eWxtYUVfaFJSdThWMlZfWWtTeWVfaE1pNVEwaDIyT0txTVNGd2JZaU5TXy1OcUJTcHg2bTJGYWVnT0MyNUFnS1FHcnpmRGRNekNuTnhEYjFNaW05aUtOWUpkZ2kzWUx3b24zanRwTnFrbjdBMHVkWnRyQlZhN1dzRGRxZUxYVG1SdHRlVzRWc1FHeG5Fa0J4T29Yc2dn?oc=5",
+      "title": "RGTI Vs QBTS Vs INFQ Vs IONQ: Which Quantum Computing Stock Is Retail Most Bullish On? - Stocktwits",
+      "source": "Stocktwits",
+      "published": 1789174911.0,
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRFhHZWM5c2RUcXlkUkNYcHhKVVhoWXBHZUdoXzh2eWxtYUVfaFJSdThWMlZfWWtTeWVfaE1pNVEwaDIyT0txTVNGd2JZaU5TXy1OcUJTcHg2bTJGYWVnT0MyNUFnS1FHcnpmRGRNekNuTnhEYjFNaW05aUtOWUpkZ2kzWUx3b24zanRwTnFrbjdBMHVkWnRyQlZhN1dzRGRxZUxYVG1SdHRlVzRWc1FHeG5Fa0J4T29Yc2dn?oc=5",
+      "tags": [
+        "RCAT",
+        "QUBT",
+        "LCID",
+        "AMC",
+        "PHUN"
+      ],
+      "summary": "Headline summary: RGTI Vs QBTS Vs INFQ Vs IONQ: Which Quantum Computing Stock Is Retail Most Bullish On?",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeGtINlZkVjNheE1PUXZKNzdlOFM1VGJrODVZV3VickV5Q1haNlZrX3p2MThDZTJWWlFTQmlXS19Pem5VeVYwMm5ZN3FBWFJkcmdlTnZLeUlRaDYxa2h5dVM0Z2xxUjN4SGhDV2QtSXpfeWJyMGZIWmQ5YXNRYkNacEV2eWFaYmhBTnB1SkZOaFZCd245LW5NTQ?oc=5",
+      "title": "T. Rowe Price ETF May Hold Dogecoin, Shiba Inu Assets - CoinMarketCap",
+      "source": "CoinMarketCap",
+      "published": 1789172407.0,
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeGtINlZkVjNheE1PUXZKNzdlOFM1VGJrODVZV3VickV5Q1haNlZrX3p2MThDZTJWWlFTQmlXS19Pem5VeVYwMm5ZN3FBWFJkcmdlTnZLeUlRaDYxa2h5dVM0Z2xxUjN4SGhDV2QtSXpfeWJyMGZIWmQ5YXNRYkNacEV2eWFaYmhBTnB1SkZOaFZCd245LW5NTQ?oc=5",
+      "tags": [
+        "JitoSOL",
+        "SOL",
+        "BTC",
+        "DOGE",
+        "XRP",
+        "SHIB",
+        "ADA"
+      ],
+      "summary": "Headline summary: T. Rowe Price ETF May Hold Dogecoin, Shiba Inu Assets",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0xdFdZa2JJOTBoaFdYSGRQZ0YybWRFbGRMY0xiSUpGLU44aUdBeFhobU9uckdMZTJSOUJwcTdEUE9TVjV0b0VTYkY4OFcxLTF4WGNEUDFvWkRrQQ?oc=5",
+      "title": "What\u2019s the Latest on XRP Spot ETFs? There\u2019s Some Movement - Cryptonews.net",
+      "source": "Cryptonews.net",
+      "published": 1789131651.0,
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0xdFdZa2JJOTBoaFdYSGRQZ0YybWRFbGRMY0xiSUpGLU44aUdBeFhobU9uckdMZTJSOUJwcTdEUE9TVjV0b0VTYkY4OFcxLTF4WGNEUDFvWkRrQQ?oc=5",
+      "tags": [
+        "HOOD",
+        "NFLX",
+        "BOTZ",
+        "SOFI",
+        "QBTS",
+        "RGTI",
+        "XRPR"
+      ],
+      "summary": "Headline summary: What\u2019s the Latest on XRP Spot ETFs? There\u2019s Some Movement",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNblh1RzBVUzdaOTNsNEpyeGpIX2p2LTRFWHp5OXVBRi1Eb09ZeTJiX29yeVI4SEowWjhjMFg1bDZwVFpmNEJwTDRMdGM3cFR3d2pUYk5IX2ZSOU1pWU05THc2YUtzZnRMRGpSSUZXeDVQYkZiVXlFWGQtQnhCOFJJQ0xSTk9TSFVTazFpZ0JzcXRYMVlfYmFvMg?oc=5",
+      "title": "3 Quantum Stocks to Buy If You Already Have IonQ - Yahoo Finance",
+      "source": "Yahoo Finance",
+      "published": 1789104000.0,
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNblh1RzBVUzdaOTNsNEpyeGpIX2p2LTRFWHp5OXVBRi1Eb09ZeTJiX29yeVI4SEowWjhjMFg1bDZwVFpmNEJwTDRMdGM3cFR3d2pUYk5IX2ZSOU1pWU05THc2YUtzZnRMRGpSSUZXeDVQYkZiVXlFWGQtQnhCOFJJQ0xSTk9TSFVTazFpZ0JzcXRYMVlfYmFvMg?oc=5",
+      "tags": [
+        "RCAT",
+        "QUBT",
+        "LCID",
+        "AMC",
+        "PHUN"
+      ],
+      "summary": "Headline summary: 3 Quantum Stocks to Buy If You Already Have IonQ",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQV2Y5LUF0S1dQckQtTkhtYi1VRXE1d3Qyal9aUzhZT0c5bEZFRXFmbFNPV2h5NkFHdWJUUTlFdEt3WU5ZOFBQYW01TW96Zzg3QlpxVUs3VkV2MkR5UVJSQWVTZlFoMHNUMFFuUEI2MkZ3WUdMUXh1RDJ6U1IxSF9YUnI0dGxqV2Nib1RCdWRENFd2b1hGM1dfSGI2TTJsRGNMV0tUTjI4eWtrWVFBdFY4bERCOGs5SW1oZFlBZk0tRmRYRWttSVE?oc=5",
+      "title": "U.S. investors can buy options on Canadian XRP ETFs, expanding regulated derivatives - \ub514\uc9c0\ud138\ud22c\ub370\uc774",
+      "source": "\ub514\uc9c0\ud138\ud22c\ub370\uc774",
+      "published": 1789090129.0,
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQV2Y5LUF0S1dQckQtTkhtYi1VRXE1d3Qyal9aUzhZT0c5bEZFRXFmbFNPV2h5NkFHdWJUUTlFdEt3WU5ZOFBQYW01TW96Zzg3QlpxVUs3VkV2MkR5UVJSQWVTZlFoMHNUMFFuUEI2MkZ3WUdMUXh1RDJ6U1IxSF9YUnI0dGxqV2Nib1RCdWRENFd2b1hGM1dfSGI2TTJsRGNMV0tUTjI4eWtrWVFBdFY4bERCOGs5SW1oZFlBZk0tRmRYRWttSVE?oc=5",
+      "tags": [
+        "HOOD",
+        "NFLX",
+        "BOTZ",
+        "SOFI",
+        "QBTS",
+        "RGTI",
+        "XRPR"
+      ],
+      "summary": "Headline summary: U.S. investors can buy options on Canadian XRP ETFs, expanding regulated derivatives",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPc1FBRXp4Q3BYSmdrVVAycGRyaVlSdFdhSFExMUtOOGNTaGNIancwOUFGTE1hRkQyWnlRRWRoZXZQamxncm85dDhZbjdsN0lreHhpRXJRbWRLelh3ZElIdlljWkpVNm9iQjNiRzZWbTB5eVR3R1JERmxReU56VUNBc2lqdHd3dXloVWpOT1RQZlpLSDlxRVpwRHN2Y0dVY25jMmItV2Y2Snpaa2FvQ2xfUHRCY2tQRlUzREhr?oc=5",
+      "title": "Cisco has a working quantum-information switch. Infleqtion will explore larger networks with it. - Stock Titan",
+      "source": "Stock Titan",
+      "published": 1789045200.0,
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPc1FBRXp4Q3BYSmdrVVAycGRyaVlSdFdhSFExMUtOOGNTaGNIancwOUFGTE1hRkQyWnlRRWRoZXZQamxncm85dDhZbjdsN0lreHhpRXJRbWRLelh3ZElIdlljWkpVNm9iQjNiRzZWbTB5eVR3R1JERmxReU56VUNBc2lqdHd3dXloVWpOT1RQZlpLSDlxRVpwRHN2Y0dVY25jMmItV2Y2Snpaa2FvQ2xfUHRCY2tQRlUzREhr?oc=5",
+      "tags": [
+        "RCAT",
+        "QUBT",
+        "LCID",
+        "AMC",
+        "PHUN"
+      ],
+      "summary": "Headline summary: Cisco has a working quantum-information switch. Infleqtion will explore larger networks with it.",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMifEFVX3lxTE80YnpKdVI4SWhqd3MzYng0VVBCUDhUWVFiR1VQXzVkQmxEajBXdjdCN0RiRldJdnhhWDFUTW9qTGRGYnF0MkxRZjJ2eDVLYnpMeWpBa1d0UkVPSkN0UXNxUEstUTFfSzVqS3ZxVTltcUJRTjItWGRvWllaSWk?oc=5",
+      "title": "5 Reasons to Buy SpaceX Stock - fool.com",
+      "source": "fool.com",
+      "published": 1789037100.0,
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE80YnpKdVI4SWhqd3MzYng0VVBCUDhUWVFiR1VQXzVkQmxEajBXdjdCN0RiRldJdnhhWDFUTW9qTGRGYnF0MkxRZjJ2eDVLYnpMeWpBa1d0UkVPSkN0UXNxUEstUTFfSzVqS3ZxVTltcUJRTjItWGRvWllaSWk?oc=5",
+      "tags": [
+        "NVDA",
+        "AMZN",
+        "TSLA",
+        "PLTR",
+        "SPCX",
+        "NOW"
+      ],
+      "summary": "Headline summary: 5 Reasons to Buy SpaceX Stock",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPRlF4NTQzLWJsYVpmWHY4MnZNVVVyam4zamsyRzNIRU43NTFwZllkMndzN2NpSk1mUE1ZX3FhM0tjLXV5cnNYYldOV1NUeVpfSlVtWHRoSU8tamVGUDB1VloxR19JLV91U3ptaVBRbDZESktxRUxvWEFaZ2UtbzhkQkpJMGpXX2hXeHVUdElHd1FocHVWenFDaHlubGJ4LUFYMTZWLTA0VjA2YVhfRVc0ekxrM1NKeGwwUW1DTS1tcVZCWVhVaEdOdg?oc=5",
+      "title": "What Would 10,000 XRP, 10,000 Cardano and 10,000 Dogecoin Be Worth in 2028? - 24/7 Wall St.",
+      "source": "24/7 Wall St.",
+      "published": 1788987600.0,
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPRlF4NTQzLWJsYVpmWHY4MnZNVVVyam4zamsyRzNIRU43NTFwZllkMndzN2NpSk1mUE1ZX3FhM0tjLXV5cnNYYldOV1NUeVpfSlVtWHRoSU8tamVGUDB1VloxR19JLV91U3ptaVBRbDZESktxRUxvWEFaZ2UtbzhkQkpJMGpXX2hXeHVUdElHd1FocHVWenFDaHlubGJ4LUFYMTZWLTA0VjA2YVhfRVc0ekxrM1NKeGwwUW1DTS1tcVZCWVhVaEdOdg?oc=5",
+      "tags": [
+        "JitoSOL",
+        "SOL",
+        "BTC",
+        "DOGE",
+        "XRP",
+        "SHIB",
+        "ADA"
+      ],
+      "summary": "Headline summary: What Would 10,000 XRP, 10,000 Cardano and 10,000 Dogecoin Be Worth in 2028?",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMijgJBVV95cUxPMmxCRXh5MzRVSWlOby1YZVo4WXJDWS1kVEFNUElWeWo3eUFXY2pMendMZUh1cUpXekt6QThneGw5Rk5UeURoRmhSamktU0o3b0J3TFZhbXBmYmlLdVVCbEJoaFFCN3g1TTlsODlRQ0IwU1l0LXpDRmcyV2RCTzB4a2Z2WFRFSHJPcTBSeWdIUXYyeDZ0MjU0Nl9OUHBnZXllNVpKdGhZU0pkcFFrS3lJX3E4R3BIaksxc1J2STlHNENGSTl3VEQ4Z3BwU2JTYkpjTXEzeGZsZVN2N283Q2V6ZjZPTXJtMWwwNTFfcEZvbTdRR3NBeklReUFfZmZUcnBkU0Y3bEFnamlHMGQ0UEE?oc=5",
+      "title": "Crypto News: Pepeto Announces $10.958M Raised Following the Shiba Inu Success While the Cardano Price Prediction Targets 14x - markets.businessinsider.com",
+      "source": "markets.businessinsider.com",
+      "published": 1788986503.0,
+      "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxPMmxCRXh5MzRVSWlOby1YZVo4WXJDWS1kVEFNUElWeWo3eUFXY2pMendMZUh1cUpXekt6QThneGw5Rk5UeURoRmhSamktU0o3b0J3TFZhbXBmYmlLdVVCbEJoaFFCN3g1TTlsODlRQ0IwU1l0LXpDRmcyV2RCTzB4a2Z2WFRFSHJPcTBSeWdIUXYyeDZ0MjU0Nl9OUHBnZXllNVpKdGhZU0pkcFFrS3lJX3E4R3BIaksxc1J2STlHNENGSTl3VEQ4Z3BwU2JTYkpjTXEzeGZsZVN2N283Q2V6ZjZPTXJtMWwwNTFfcEZvbTdRR3NBeklReUFfZmZUcnBkU0Y3bEFnamlHMGQ0UEE?oc=5",
+      "tags": [
+        "JitoSOL",
+        "SOL",
+        "BTC",
+        "DOGE",
+        "XRP",
+        "SHIB",
+        "ADA"
+      ],
+      "summary": "Headline summary: Crypto News: Pepeto Announces $10.958M Raised Following the Shiba Inu Success While the Cardano Price Prediction Targets 14x",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOcVhKbTJxeG9yZE9INmgxR1hkZy1sYWVOS3RTSlk1dUtBNXY1dEJwWEFtRHhGcW5qSW8wd2QxaHdCckxjWDI4WnllZkMyOU5UQ1VLTHR4aFZzZExWZTdwd1BfaG8wMDZ0VEUycGZEZWJKMm9HXzhxWkNvNER6dG1MbEN4ZU5lQWMzekNrbGt0aDU?oc=5",
+      "title": "Zcash Is Up More Than 2,000% in a Year While XRP, Solana and Cardano Are All Down. What Zcash Has That They Do Not. - Yahoo Finance",
+      "source": "Yahoo Finance",
+      "published": 1788983666.0,
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOcVhKbTJxeG9yZE9INmgxR1hkZy1sYWVOS3RTSlk1dUtBNXY1dEJwWEFtRHhGcW5qSW8wd2QxaHdCckxjWDI4WnllZkMyOU5UQ1VLTHR4aFZzZExWZTdwd1BfaG8wMDZ0VEUycGZEZWJKMm9HXzhxWkNvNER6dG1MbEN4ZU5lQWMzekNrbGt0aDU?oc=5",
+      "tags": [
+        "JitoSOL",
+        "SOL",
+        "BTC",
+        "DOGE",
+        "XRP",
+        "SHIB",
+        "ADA"
+      ],
+      "summary": "Headline summary: Zcash Is Up More Than 2,000% in a Year While XRP, Solana and Cardano Are All Down. What Zcash Has That They Do Not.",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNQ1pzbzRIU2JuYUlDQkl3YzFmdm9CeW1fb1Qxd3NZS1UyQnd5YVRiSVh4NEpvTW1zT2E1LXBqY0JkR0drWnlCR0hhaHU2SXdPb1YtRk9TMkZQSHJLSXdfNXU3Q1J2Y0NfVTdlLVk4dXdwUEhURDFuQXpTTERnclZTcWd6VWI?oc=5",
+      "title": "5 Best Quantum Computing ETFs for 2026 | Investing - US News Money",
+      "source": "US News Money",
+      "published": 1788983160.0,
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNQ1pzbzRIU2JuYUlDQkl3YzFmdm9CeW1fb1Qxd3NZS1UyQnd5YVRiSVh4NEpvTW1zT2E1LXBqY0JkR0drWnlCR0hhaHU2SXdPb1YtRk9TMkZQSHJLSXdfNXU3Q1J2Y0NfVTdlLVk4dXdwUEhURDFuQXpTTERnclZTcWd6VWI?oc=5",
+      "tags": [
+        "RCAT",
+        "QUBT",
+        "LCID",
+        "AMC",
+        "PHUN"
+      ],
+      "summary": "Headline summary: 5 Best Quantum Computing ETFs for 2026 | Investing",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMingJBVV95cUxQUU9CRmhmSjNxLWdGNG5pQ1p5VkplV3ktS0FFMjBtVXA3M1JSWkh5bGJRa0FtOWJYcjdBdE16RG9wZDZDZ2VYOWI3Mk1uMzl5RGFFTG5lWEllOE1ISThvaE81clM5UXJUSTdCMDkzT0s4clQxbXdNRzd2VDgtMVJPdHZrbHBpY1RhdHJndG1nV3g2b1JqMXhaV3RyNGZXZlNmaVVsT3FHVW80c2FFYlJDdkVsMVpldEUzNVFjRG9ya1BWRDZFQUF4N1FuN0dlRUlWZnc1N09FM0xXTmlTeFBSTjhzQlh6MGdLbUFiOTByYjdqRWV5UlFxaktuakxkN09iNGVqcGxfTkUtNzFSWWVTamRpd1RaOGNPX2VwVFhB?oc=5",
+      "title": "New Crypto on Ethereum: Pepeto Announces Its EVM Layer 2 - GlobeNewswire",
+      "source": "GlobeNewswire",
+      "published": 1788979924.0,
+      "url": "https://news.google.com/rss/articles/CBMingJBVV95cUxQUU9CRmhmSjNxLWdGNG5pQ1p5VkplV3ktS0FFMjBtVXA3M1JSWkh5bGJRa0FtOWJYcjdBdE16RG9wZDZDZ2VYOWI3Mk1uMzl5RGFFTG5lWEllOE1ISThvaE81clM5UXJUSTdCMDkzT0s4clQxbXdNRzd2VDgtMVJPdHZrbHBpY1RhdHJndG1nV3g2b1JqMXhaV3RyNGZXZlNmaVVsT3FHVW80c2FFYlJDdkVsMVpldEUzNVFjRG9ya1BWRDZFQUF4N1FuN0dlRUlWZnc1N09FM0xXTmlTeFBSTjhzQlh6MGdLbUFiOTByYjdqRWV5UlFxaktuakxkN09iNGVqcGxfTkUtNzFSWWVTamRpd1RaOGNPX2VwVFhB?oc=5",
+      "tags": [
+        "JitoSOL",
+        "SOL",
+        "BTC",
+        "DOGE",
+        "XRP",
+        "SHIB",
+        "ADA"
+      ],
+      "summary": "Headline summary: New Crypto on Ethereum: Pepeto Announces Its EVM Layer 2",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNSU83cFVWX2hlZUhKa0czdmU2QlhXSkh4c3NrbW1mQ2ZJNVhXOGNKck1xem1SbHJYRnk1WUZjQllKUlNfcTdLbWZVQU1xMzZFNUhkVWhxLWJxMkpsX292MjNEUjF0WnFZeExpNXM4N3FxRUNhenhrMmMzNV8tYUdkeldMM3FycVRUSGc4RmJNeHU2VE1vLU5MZ3RqRms5UnR2NjVhendpalg?oc=5",
+      "title": "3 Lesser-Known Quantum Plays the Market May Be Overlooking Right Now - MarketBeat",
+      "source": "MarketBeat",
+      "published": 1788967982.0,
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNSU83cFVWX2hlZUhKa0czdmU2QlhXSkh4c3NrbW1mQ2ZJNVhXOGNKck1xem1SbHJYRnk1WUZjQllKUlNfcTdLbWZVQU1xMzZFNUhkVWhxLWJxMkpsX292MjNEUjF0WnFZeExpNXM4N3FxRUNhenhrMmMzNV8tYUdkeldMM3FycVRUSGc4RmJNeHU2VE1vLU5MZ3RqRms5UnR2NjVhendpalg?oc=5",
+      "tags": [
+        "RCAT",
+        "QUBT",
+        "LCID",
+        "AMC",
+        "PHUN"
+      ],
+      "summary": "Headline summary: 3 Lesser-Known Quantum Plays the Market May Be Overlooking Right Now",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZDlvOVd6d0ZYUjZKTWdGNTZwY1FGQkJpQUlzb3ZFX3Rxc2FEazM2RE44LWkyUDBKUmQ4TExrbnhoXzVHaEl1dHZUQ1NONjNsdGxBLUtxZEtMNXAxa3E1Q2xrNGUxRjlJY090dFA0ZzBweDFlaHN3RUFMeFNlQ1BQdmJicEFjZ2JodlJJVUdvQ3dPVnJjckMtR1BPNmZhU1VNajdDbXhCN2FYMzhsdTNsZw?oc=5",
+      "title": "Top 5 Stocks Poised to Profit From the CHIPS Quantum Incentive Wave - 24/7 Wall St.",
+      "source": "24/7 Wall St.",
+      "published": 1788966300.0,
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZDlvOVd6d0ZYUjZKTWdGNTZwY1FGQkJpQUlzb3ZFX3Rxc2FEazM2RE44LWkyUDBKUmQ4TExrbnhoXzVHaEl1dHZUQ1NONjNsdGxBLUtxZEtMNXAxa3E1Q2xrNGUxRjlJY090dFA0ZzBweDFlaHN3RUFMeFNlQ1BQdmJicEFjZ2JodlJJVUdvQ3dPVnJjckMtR1BPNmZhU1VNajdDbXhCN2FYMzhsdTNsZw?oc=5",
+      "tags": [
+        "RCAT",
+        "QUBT",
+        "LCID",
+        "AMC",
+        "PHUN"
+      ],
+      "summary": "Headline summary: Top 5 Stocks Poised to Profit From the CHIPS Quantum Incentive Wave",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9fTE1pUWp4aTVOQ2hQUURTa205ZkJxdjQyeHV0YUdrMlZ3X1I0QnlpWmVFSHhsMVRjOElOZmVWQkF5allCSG9YV3hKa1lwdkNaUF9iZXdtX1hpYllzeWlwYjNJVjFwZlp5OXVwTW8wYW5xd2pM0gF6QVVfeXFMTy1ILThycjBUVEZ6VzBtTnBiQW9LQzZPeVNVVGhzQ0RZbWxOQU5TdC1hZkxyamhPOGNETk82enhBUi1vV3p4RG8zVlBUTk1EajdiVWZFYTdSYzJnQnVpejRhZFlidG1tTnBhMW1icWtlc2tiNlpRaVRIT1E?oc=5",
+      "title": "Shiba Inu (SHIB) Price Prediction 2026, 2027 \u2013 2030: Will SHIB Price Reach $0.000330? - Coinpedia",
+      "source": "Coinpedia",
+      "published": 1788938580.0,
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9fTE1pUWp4aTVOQ2hQUURTa205ZkJxdjQyeHV0YUdrMlZ3X1I0QnlpWmVFSHhsMVRjOElOZmVWQkF5allCSG9YV3hKa1lwdkNaUF9iZXdtX1hpYllzeWlwYjNJVjFwZlp5OXVwTW8wYW5xd2pM0gF6QVVfeXFMTy1ILThycjBUVEZ6VzBtTnBiQW9LQzZPeVNVVGhzQ0RZbWxOQU5TdC1hZkxyamhPOGNETk82enhBUi1vV3p4RG8zVlBUTk1EajdiVWZFYTdSYzJnQnVpejRhZFlidG1tTnBhMW1icWtlc2tiNlpRaVRIT1E?oc=5",
+      "tags": [
+        "JitoSOL",
+        "SOL",
+        "BTC",
+        "DOGE",
+        "XRP",
+        "SHIB",
+        "ADA"
+      ],
+      "summary": "Headline summary: Shiba Inu (SHIB) Price Prediction 2026, 2027 \u2013 2030: Will SHIB Price Reach $0.000330?",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9YblNZdUxtUzJXbFBFTzBmRU1XNUdIaVBsR0pucGZYX3NCLXN4U3NaOGRQendYYWRXV1AtdXRIODR1MUVXYXRTaDRWS2JMRDNheERBYQ?oc=5",
+      "title": "Hyperliquid (HYPE) Price USD Today, News, Charts, Market Cap - Coinbase",
+      "source": "Coinbase",
+      "published": 1788937200.0,
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9YblNZdUxtUzJXbFBFTzBmRU1XNUdIaVBsR0pucGZYX3NCLXN4U3NaOGRQendYYWRXV1AtdXRIODR1MUVXYXRTaDRWS2JMRDNheERBYQ?oc=5",
+      "tags": [
+        "HBAR",
+        "FLR",
+        "ZBCN",
+        "WLFI",
+        "TRUMP",
+        "PEPE",
+        "PI",
+        "ETH"
+      ],
+      "summary": "Headline summary: Hyperliquid (HYPE) Price USD Today, News, Charts, Market Cap",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNb1FuNk9Qbmk2WGpwTzVsbjhySWE2eGdrNXA0eDBZNlp3cFROUDUxV2lXQjA2OW5nUG9GdDEtWEl6Wm9BOTgybkt4VkFIaVEyS1d2dmJ2R2RrX1JxX3ZDaGhQRTdZN1dvLUlpczRVWlNrX2RMaW9vLUtRT3lXdzAzWVBEXzNIbVd4QXlIMDVKZktQYVlfR1lIMHJ1ZDBUdjBTZlo0?oc=5",
+      "title": "Jack Dorsey\u2019s Block files OCC application for Bitcoin and stablecoin custody bank - Crypto News",
+      "source": "Crypto News",
+      "published": 1788933480.0,
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNb1FuNk9Qbmk2WGpwTzVsbjhySWE2eGdrNXA0eDBZNlp3cFROUDUxV2lXQjA2OW5nUG9GdDEtWEl6Wm9BOTgybkt4VkFIaVEyS1d2dmJ2R2RrX1JxX3ZDaGhQRTdZN1dvLUlpczRVWlNrX2RMaW9vLUtRT3lXdzAzWVBEXzNIbVd4QXlIMDVKZktQYVlfR1lIMHJ1ZDBUdjBTZlo0?oc=5",
+      "tags": [
+        "HBAR",
+        "FLR",
+        "ZBCN",
+        "WLFI",
+        "TRUMP",
+        "PEPE",
+        "PI",
+        "ETH"
+      ],
+      "summary": "Headline summary: Jack Dorsey\u2019s Block files OCC application for Bitcoin and stablecoin custody bank",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPQ0NpZ2huYk15RkVtMUdkZ3YwRkFBOGZ6dU5hb0Rrc0VTTUxnTElqLUd0cW1qbTlkOFNhQzFqWTZaLXpUV2FRYk91dEkzVDljdzB0M3REZ1JXWXBDYXNvMHg2UnVoM09Ld0M0bl9vRmJzVDZRaldtOVkyVExFVHhsMlNRUUZPWFJKakZ6NktjSXBPOG40YVMw?oc=5",
+      "title": "If I Were in My 20s, I'd Buy This Vanguard ETF Warren Buffett Recommended and Hold It Forever - fool.com",
+      "source": "fool.com",
+      "published": 1788921000.0,
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPQ0NpZ2huYk15RkVtMUdkZ3YwRkFBOGZ6dU5hb0Rrc0VTTUxnTElqLUd0cW1qbTlkOFNhQzFqWTZaLXpUV2FRYk91dEkzVDljdzB0M3REZ1JXWXBDYXNvMHg2UnVoM09Ld0M0bl9vRmJzVDZRaldtOVkyVExFVHhsMlNRUUZPWFJKakZ6NktjSXBPOG40YVMw?oc=5",
+      "tags": [
+        "VOO",
+        "ETN",
+        "ISRG",
+        "CEG",
+        "MRVL",
+        "QCOM"
+      ],
+      "summary": "Headline summary: If I Were in My 20s, I'd Buy This Vanguard ETF Warren Buffett Recommended and Hold It Forever",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMid0FVX3lxTE40WnAtMmFuTjdlVDJNWGY3b3dZQVMwbmFEZ1hvWFpTRVlCY2ZjU3o0TTVqNmNFZmQwMzJCQWNUOHJhTjZybmxiTUs2MkNLS2FKdWpPQzBOcXQ4VmNtUER2VzNtaERmWWExV0luMTk2cWNPVFFLRHQ4?oc=5",
+      "title": "If I Were in My 20s, I'd Buy This Vanguard ETF Warren Buffett Recommended and Hold It Forever - AOL.com",
+      "source": "AOL.com",
+      "published": 1788918600.0,
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE40WnAtMmFuTjdlVDJNWGY3b3dZQVMwbmFEZ1hvWFpTRVlCY2ZjU3o0TTVqNmNFZmQwMzJCQWNUOHJhTjZybmxiTUs2MkNLS2FKdWpPQzBOcXQ4VmNtUER2VzNtaERmWWExV0luMTk2cWNPVFFLRHQ4?oc=5",
+      "tags": [
+        "VOO",
+        "ETN",
+        "ISRG",
+        "CEG",
+        "MRVL",
+        "QCOM"
+      ],
+      "summary": "Headline summary: If I Were in My 20s, I'd Buy This Vanguard ETF Warren Buffett Recommended and Hold It Forever",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxOR2xUWlR3a29uckpDRGxYcGJ1aHgzbnRWOXQzMEZka3htc2VyQjVJVUw4WkNwQnhWeDRXb3dFeVNBNFNCNVhTZnhIWk9kNk1CSktLMk5iLTBZamZJVzE4RTRmNHh2WTM0ekJaTjE1aUstWTlfRHo2cTZ0ZlBLUldLMkFuUGhhN09oazRhUW4zZk9YczV1QmJpYjFrN1lnOXdPVTQzOFJKWEczQ1lXMU5DRDF3OWVsdXZwcjFtOGx6NmNmQXFCNC1iQm12UFFfeGw5cm9lcmhJeHpFR1JXQWJ1d0xleFVzNzdXTlJaZ1h5eVViNzhRdVV0V3pmLUZpRVB0bUdiRUlCR3dVcUJsaDdBRGxjLUxVNVd5VnpoVXVJa1phOUFMSnFjbFRROGozQjdHMnZEaWZmQVVkUTA?oc=5",
+      "title": "09/08/2026 ValuEngine Weekly Commentary: Advancing Nuclear Energy and Evaluating Its Current Place within Dynamic Asset Strategies. CCJ - The Globe and Mail",
+      "source": "The Globe and Mail",
+      "published": 1788907440.0,
+      "url": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxOR2xUWlR3a29uckpDRGxYcGJ1aHgzbnRWOXQzMEZka3htc2VyQjVJVUw4WkNwQnhWeDRXb3dFeVNBNFNCNVhTZnhIWk9kNk1CSktLMk5iLTBZamZJVzE4RTRmNHh2WTM0ekJaTjE1aUstWTlfRHo2cTZ0ZlBLUldLMkFuUGhhN09oazRhUW4zZk9YczV1QmJpYjFrN1lnOXdPVTQzOFJKWEczQ1lXMU5DRDF3OWVsdXZwcjFtOGx6NmNmQXFCNC1iQm12UFFfeGw5cm9lcmhJeHpFR1JXQWJ1d0xleFVzNzdXTlJaZ1h5eVViNzhRdVV0V3pmLUZpRVB0bUdiRUlCR3dVcUJsaDdBRGxjLUxVNVd5VnpoVXVJa1phOUFMSnFjbFRROGozQjdHMnZEaWZmQVVkUTA?oc=5",
+      "tags": [
+        "VOO",
+        "ETN",
+        "ISRG",
+        "CEG",
+        "MRVL",
+        "QCOM"
+      ],
+      "summary": "Headline summary: 09/08/2026 ValuEngine Weekly Commentary: Advancing Nuclear Energy and Evaluating Its Current Place within Dynamic Asset Strategies. CCJ",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQSy1KSko2Snp1QmVKLWZPMTY2NWVFVEVJUHpFYVEtSEdkTlhpbnF0X2wwdFRkMG5GSEFIdEVXNW9WQm04a21VMUl0TWlZajdfSlBWREFnQlBJZVZXdW80Smw4WUU1VnlMQlZIM0FiNFNPczBzdUZ3TzkwZ3ZqYVFyWExGOGtvUklkTFJHNDFxejRudVhrQzkzSEFtLW5jN054dTlwMjd2ekJRMlpVQlFCdTJTSV9QeUdpY2REYm4tUERlLWhpWWxz?oc=5",
+      "title": "Quantum Stocks Are Climbing Today as CHIPS Act Cash Pours In. Here\u2019s One Way to Invest. - Barchart.com",
+      "source": "Barchart.com",
+      "published": 1788896025.0,
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQSy1KSko2Snp1QmVKLWZPMTY2NWVFVEVJUHpFYVEtSEdkTlhpbnF0X2wwdFRkMG5GSEFIdEVXNW9WQm04a21VMUl0TWlZajdfSlBWREFnQlBJZVZXdW80Smw4WUU1VnlMQlZIM0FiNFNPczBzdUZ3TzkwZ3ZqYVFyWExGOGtvUklkTFJHNDFxejRudVhrQzkzSEFtLW5jN054dTlwMjd2ekJRMlpVQlFCdTJTSV9QeUdpY2REYm4tUERlLWhpWWxz?oc=5",
+      "tags": [
+        "RCAT",
+        "QUBT",
+        "LCID",
+        "AMC",
+        "PHUN"
+      ],
+      "summary": "Headline summary: Quantum Stocks Are Climbing Today as CHIPS Act Cash Pours In. Here\u2019s One Way to Invest.",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1OM0theVZwbDJHb2Y5M2txNkxtajIwaVFMNk55ZlRuWjR0cnVOTEwyRk9CMU9NbnpLSHRtXzc4N1VrR2ZfZkdnTDhEVzVobThVWVZaNURmTExwNGVEMzEtZmkzMS11VTVFWkFPWHBaSlNaemk3T3RzdzNTclk?oc=5",
+      "title": "Donald Trump Stocks: 8 Stocks Owned by the President | Investing - US News Money",
+      "source": "US News Money",
+      "published": 1788893340.0,
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1OM0theVZwbDJHb2Y5M2txNkxtajIwaVFMNk55ZlRuWjR0cnVOTEwyRk9CMU9NbnpLSHRtXzc4N1VrR2ZfZkdnTDhEVzVobThVWVZaNURmTExwNGVEMzEtZmkzMS11VTVFWkFPWHBaSlNaemk3T3RzdzNTclk?oc=5",
+      "tags": [
+        "HBAR",
+        "FLR",
+        "ZBCN",
+        "WLFI",
+        "TRUMP",
+        "PEPE",
+        "PI",
+        "ETH"
+      ],
+      "summary": "Headline summary: Donald Trump Stocks: 8 Stocks Owned by the President | Investing",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPQmFxOEpDU0FYRmxreDVNenlmckNlZW9mRWp4SzBEcDB3aHpoUFBzWlV4TTh5dXFReGhGVW1NNlA3bFFPcGtjVnJ4dmRFRmptZkpKSV9fdEx1YmpCMDBrS215ZG5RamtYRDNvREFxLTJBR0ZYdVlGYzZxMzd5NHF5R3dsNm1hNGQ2QXc5dm5VUlZ6MWN6bk5XNTBJaVdtQ0V4SVJmeGhBWWtQQQ?oc=5",
+      "title": "Price Prediction: Nvidia Stock Could Be Worth This Much by 2030 - 24/7 Wall St.",
+      "source": "24/7 Wall St.",
+      "published": 1788883200.0,
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPQmFxOEpDU0FYRmxreDVNenlmckNlZW9mRWp4SzBEcDB3aHpoUFBzWlV4TTh5dXFReGhGVW1NNlA3bFFPcGtjVnJ4dmRFRmptZkpKSV9fdEx1YmpCMDBrS215ZG5RamtYRDNvREFxLTJBR0ZYdVlGYzZxMzd5NHF5R3dsNm1hNGQ2QXc5dm5VUlZ6MWN6bk5XNTBJaVdtQ0V4SVJmeGhBWWtQQQ?oc=5",
+      "tags": [
+        "NVDA",
+        "AMZN",
+        "TSLA",
+        "PLTR",
+        "SPCX",
+        "NOW"
+      ],
+      "summary": "Headline summary: Price Prediction: Nvidia Stock Could Be Worth This Much by 2030",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOOWpqdkNTUmtJcXpnZW16akZhczVRYXpqaEFsVDU2M2ZqY2FxU281cC1EOC1Jc2RMQ0g3SEhlcWRGaFNCNnhTcFpMV0M5UGtJY1F0V2Q0UEZjTnl4VlZ2SUV2bVRsd0FvMnFTblJnQTBKOHpGS0xPR2hUYVY1RVYtb0VYOEtad0ZMM0pWcnZiV1VCR0lqbkZ4ZkdKNmZocDlaWFZJMjBhekZ1UUdvb0d1WVBTVTJscm5XTFE?oc=5",
+      "title": "Why quantum computing stocks are soaring today while the rest of the market falls - Fast Company",
+      "source": "Fast Company",
+      "published": 1788882326.0,
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOOWpqdkNTUmtJcXpnZW16akZhczVRYXpqaEFsVDU2M2ZqY2FxU281cC1EOC1Jc2RMQ0g3SEhlcWRGaFNCNnhTcFpMV0M5UGtJY1F0V2Q0UEZjTnl4VlZ2SUV2bVRsd0FvMnFTblJnQTBKOHpGS0xPR2hUYVY1RVYtb0VYOEtad0ZMM0pWcnZiV1VCR0lqbkZ4ZkdKNmZocDlaWFZJMjBhekZ1UUdvb0d1WVBTVTJscm5XTFE?oc=5",
+      "tags": [
+        "RCAT",
+        "QUBT",
+        "LCID",
+        "AMC",
+        "PHUN"
+      ],
+      "summary": "Headline summary: Why quantum computing stocks are soaring today while the rest of the market falls",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPMnpHWXdYMktjWV8xaGE3ZDlURGZzZDh0NkpuaXNBb2RzanBzZWxnUjVnSjVzS2dkTGh6NTZaYjVkTUJoWkR2VVMtblJXQVJTbTAydDVueTFTWlhnN0hHbkRyMzJwa1VRaTM1V3N0OGxkS3BLT2pBd0IzTXlEY2dzclZfZzNIRXVscjVfa3pLU241OWVDWHBaLVBHdThIc2VZ?oc=5",
+      "title": "US Strategic Reserve - Bit2Me",
+      "source": "Bit2Me",
+      "published": 1788875178.0,
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPMnpHWXdYMktjWV8xaGE3ZDlURGZzZDh0NkpuaXNBb2RzanBzZWxnUjVnSjVzS2dkTGh6NTZaYjVkTUJoWkR2VVMtblJXQVJTbTAydDVueTFTWlhnN0hHbkRyMzJwa1VRaTM1V3N0OGxkS3BLT2pBd0IzTXlEY2dzclZfZzNIRXVscjVfa3pLU241OWVDWHBaLVBHdThIc2VZ?oc=5",
+      "tags": [
+        "JitoSOL",
+        "SOL",
+        "BTC",
+        "DOGE",
+        "XRP",
+        "SHIB",
+        "ADA"
+      ],
+      "summary": "Headline summary: US Strategic Reserve",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9hVVlVelJEUlc0czdNWjN5REZWZUNqQ05taDNKeURuYXUxUThtMlR6a3pwa3JBWDh1djYtdGYwZ1E1MERXR1JMZGNGLThoV1hTM3JLeEJnUXlfdUROc295NkF0RWdiNjF3XzJlQmF6c3RtOUFZeWh6eUVRVQ?oc=5",
+      "title": "Cardano Founder Says Ethereum Is Quietly Copying Its Core Design - Yellow.com",
+      "source": "Yellow.com",
+      "published": 1788869763.0,
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9hVVlVelJEUlc0czdNWjN5REZWZUNqQ05taDNKeURuYXUxUThtMlR6a3pwa3JBWDh1djYtdGYwZ1E1MERXR1JMZGNGLThoV1hTM3JLeEJnUXlfdUROc295NkF0RWdiNjF3XzJlQmF6c3RtOUFZeWh6eUVRVQ?oc=5",
+      "tags": [
+        "JitoSOL",
+        "SOL",
+        "BTC",
+        "DOGE",
+        "XRP",
+        "SHIB",
+        "ADA"
+      ],
+      "summary": "Headline summary: Cardano Founder Says Ethereum Is Quietly Copying Its Core Design",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMie0FVX3lxTFB5RkQzYl9pQ0JZeDRZRVdfNzRRbTJSQWs4TEJfbkM3bTl6X2pjYmdEaVpBRFBPbkxRUGtSQjM4ZGs1anhwXzMwMmNlZzNibHYwQjFBSXFTR0EtNmZ4ZXdJRUw1dHZULWZiSDhEM1RGNTVtVUl4SWxYR0ktMA?oc=5",
+      "title": "SpaceX Stock Can Gain Nearly 50%, New Bull Says - Barron's",
+      "source": "Barron's",
+      "published": 1788864000.0,
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFB5RkQzYl9pQ0JZeDRZRVdfNzRRbTJSQWs4TEJfbkM3bTl6X2pjYmdEaVpBRFBPbkxRUGtSQjM4ZGs1anhwXzMwMmNlZzNibHYwQjFBSXFTR0EtNmZ4ZXdJRUw1dHZULWZiSDhEM1RGNTVtVUl4SWxYR0ktMA?oc=5",
+      "tags": [
+        "NVDA",
+        "AMZN",
+        "TSLA",
+        "PLTR",
+        "SPCX",
+        "NOW"
+      ],
+      "summary": "Headline summary: SpaceX Stock Can Gain Nearly 50%, New Bull Says",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMie0FVX3lxTFA3cUkxRTNkckFPV0E1alVORURUem9QV3RSYWxaV1RScXY5X200LWRWVU02WVdjUHlrTElOd1loNlYwcmFJdTRUWGUwX01GdUcydjJySHlxVGVJWFEycjlHQW1RQm93czVPdEdvMTB3eVcwX1Uwb0N4R2NoZ9IBgAFBVV95cUxQSlprSjA1bjhJMlUtdzVaX2NKc05GSlhfRHBaVVdzSll4QzM4bGtrRGt0T3gyMnVxLWRQSHJSVWlDcno5UlhJaTVtczloMVFLRm1WdEZUc3kwQTZQMEhQeWRDZzNtNG13bi1GLUV5bnhXT3FVME9oa3lzOG5aTlo2Mg?oc=5",
+      "title": "Nvidia supplier Wistron's shares drop after it announces $1.5 billion global stock sale - CNBC",
+      "source": "CNBC",
+      "published": 1788835440.0,
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFA3cUkxRTNkckFPV0E1alVORURUem9QV3RSYWxaV1RScXY5X200LWRWVU02WVdjUHlrTElOd1loNlYwcmFJdTRUWGUwX01GdUcydjJySHlxVGVJWFEycjlHQW1RQm93czVPdEdvMTB3eVcwX1Uwb0N4R2NoZ9IBgAFBVV95cUxQSlprSjA1bjhJMlUtdzVaX2NKc05GSlhfRHBaVVdzSll4QzM4bGtrRGt0T3gyMnVxLWRQSHJSVWlDcno5UlhJaTVtczloMVFLRm1WdEZUc3kwQTZQMEhQeWRDZzNtNG13bi1GLUV5bnhXT3FVME9oa3lzOG5aTlo2Mg?oc=5",
+      "tags": [
+        "NVDA",
+        "AMZN",
+        "TSLA",
+        "PLTR",
+        "SPCX",
+        "NOW"
+      ],
+      "summary": "Headline summary: Nvidia supplier Wistron's shares drop after it announces $1.5 billion global stock sale",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOQ3Z1VlV1aGNMc3dTSGx2VWo0Uk5zZkN5LUtzOUNJWlhoRXBCTHFNRmt3SzluY1RrUFpSZmpPY1NBOGVUWW8wV3ExQUxBTUFoSENCVWJVRDcxWjBra2pscFVxeUVaYmNLTGJURGdWUEI5cXBoakY3dWptZnZiUE83dW5DQV8xQ21vdUFlY25tRFpfektYQVQ4bnNzLW1LLTMyemhPR1NMV1lTaTRN?oc=5",
+      "title": "Tesla: Shares Fall as Market Disappointed With Cybercab Launch Event - Morningstar",
+      "source": "Morningstar",
+      "published": 1788797828.0,
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOQ3Z1VlV1aGNMc3dTSGx2VWo0Uk5zZkN5LUtzOUNJWlhoRXBCTHFNRmt3SzluY1RrUFpSZmpPY1NBOGVUWW8wV3ExQUxBTUFoSENCVWJVRDcxWjBra2pscFVxeUVaYmNLTGJURGdWUEI5cXBoakY3dWptZnZiUE83dW5DQV8xQ21vdUFlY25tRFpfektYQVQ4bnNzLW1LLTMyemhPR1NMV1lTaTRN?oc=5",
+      "tags": [
+        "NVDA",
+        "AMZN",
+        "TSLA",
+        "PLTR",
+        "SPCX",
+        "NOW"
+      ],
+      "summary": "Headline summary: Tesla: Shares Fall as Market Disappointed With Cybercab Launch Event",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5oTUw4RTFjNnd0LUZIYUg5ZWdCRXQ0VjFZWmI1Sm1sSmI4MHVnMk5mT0x6STBKWFVJVnExSEJ6akh1aDY5cmtRcGdqMmFVdGtVUnlkSjJxMS1hbnFKOFRXZTFMRmFaS1BkOERpYnI2QzZCVkhiOHNnVQ?oc=5",
+      "title": "ServiceNow Leads Five Stocks To Watch Near Buy Points - Investor's Business Daily",
+      "source": "Investor's Business Daily",
+      "published": 1788609600.0,
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5oTUw4RTFjNnd0LUZIYUg5ZWdCRXQ0VjFZWmI1Sm1sSmI4MHVnMk5mT0x6STBKWFVJVnExSEJ6akh1aDY5cmtRcGdqMmFVdGtVUnlkSjJxMS1hbnFKOFRXZTFMRmFaS1BkOERpYnI2QzZCVkhiOHNnVQ?oc=5",
+      "tags": [
+        "NVDA",
+        "AMZN",
+        "TSLA",
+        "PLTR",
+        "SPCX",
+        "NOW"
+      ],
+      "summary": "Headline summary: ServiceNow Leads Five Stocks To Watch Near Buy Points",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNSWVwTmNacEpnV2E0MlBvRU1zZW94d3JhRTVmLUxPbm1iRlIyaWEtVzBEbzRQZXdDZlFMeWwwTHh4aHpQdHFUY2M1RnVLMUNuajRfZDZmczdwV25aWE5vT2pOTDg0R1Z3aHdueXY2MkY4WFFiNHlyeVJCSmRyN1FQY1lna3ZxT0VkUkQ4OV9meXRUTDA?oc=5",
+      "title": "What Move Will SpaceX Stock Make After Sept. 9? The Evidence Is Piling Up, and Here\u2019s What It Shows. - Yahoo Finance",
+      "source": "Yahoo Finance",
+      "published": 1788596581.0,
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNSWVwTmNacEpnV2E0MlBvRU1zZW94d3JhRTVmLUxPbm1iRlIyaWEtVzBEbzRQZXdDZlFMeWwwTHh4aHpQdHFUY2M1RnVLMUNuajRfZDZmczdwV25aWE5vT2pOTDg0R1Z3aHdueXY2MkY4WFFiNHlyeVJCSmRyN1FQY1lna3ZxT0VkUkQ4OV9meXRUTDA?oc=5",
+      "tags": [
+        "NVDA",
+        "AMZN",
+        "TSLA",
+        "PLTR",
+        "SPCX",
+        "NOW"
+      ],
+      "summary": "Headline summary: What Move Will SpaceX Stock Make After Sept. 9? The Evidence Is Piling Up, and Here\u2019s What It Shows.",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOMUY0a09mbkU3eU1TYzR3Q3lPUTl0dnJ5aWtnVUQ2eUxGd21OSFlVSGY0dnlIS0I3S0MzbDJNbDB3cHNWYk81VXktdXBuYks2UHlPTHMxUlZrNFpkdVowTm1ORGxZNm1oUHlUNmF6c1hQLUs0enkxMUFEVGUxel96LUU5UWZQeVZ3OTJlaTByY1NQazJEa1dLVjVVUVRwNHVQaGc?oc=5",
+      "title": "Jim Cramer has a blunt message for Amazon stock investors - thestreet.com",
+      "source": "thestreet.com",
+      "published": 1788595380.0,
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOMUY0a09mbkU3eU1TYzR3Q3lPUTl0dnJ5aWtnVUQ2eUxGd21OSFlVSGY0dnlIS0I3S0MzbDJNbDB3cHNWYk81VXktdXBuYks2UHlPTHMxUlZrNFpkdVowTm1ORGxZNm1oUHlUNmF6c1hQLUs0enkxMUFEVGUxel96LUU5UWZQeVZ3OTJlaTByY1NQazJEa1dLVjVVUVRwNHVQaGc?oc=5",
+      "tags": [
+        "NVDA",
+        "AMZN",
+        "TSLA",
+        "PLTR",
+        "SPCX",
+        "NOW"
+      ],
+      "summary": "Headline summary: Jim Cramer has a blunt message for Amazon stock investors",
+      "summaryType": "Headline-derived; full article not retrieved",
+      "linkType": "Google News link to original publisher"
+    }
+  ],
+  "newsStatus": "connected",
+  "issues": []
+}

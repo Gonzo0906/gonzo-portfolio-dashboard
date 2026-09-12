@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "stocks": [
+    ["VOO",0.42788,701.08],["ETN",0.33062,423.45],["ISRG",0.43801,365.29],["TSLA",0.72839,295.17],["CEG",0.50043,279.76],["AMZN",1.47964,212.21],["MRVL",0.85036,235.19],["NVDA",50.52645,13.95],["QCOM",0.84942,176.59],["PLTR",2.62793,133.18],["SPCX",1,135],["NOW",3.32708,90.17],["HOOD",4.08512,85.68],["NFLX",2.68145,74.59],["BOTZ",5.70056,36.84],["SOFI",28.3366,15.88],["QBTS",10.66532,14.06],["RGTI",15.0065,13.33],["XRPR",2,0],["RCAT",19.90801,9.04],["QUBT",63.71334,2.98],["LCID",280.36788,1.12],["AMC",5.75,null],["PHUN",2,null]
+  ],
+  "crypto": [
+    ["JitoSOL",31.76,"jito-staked-sol","Jito Staked SOL"],
+    ["SOL",15.65,"solana","Solana"],
+    ["BTC",0.008077,"bitcoin","Bitcoin"],
+    ["DOGE",20302.1,"dogecoin","Dogecoin"],
+    ["XRP",1062.747,"ripple","XRP"],
+    ["SHIB",62896364,"shiba-inu","Shiba Inu"],
+    ["ADA",1088.587647,"cardano","Cardano"],
+    ["HBAR",832.36,"hedera-hashgraph","Hedera"],
+    ["FLR",9263.30,"flare-networks","Flare"],
+    ["ZBCN",32041.91,"zebec-network","Zebec Network"],
+    ["WLFI",132.68,"world-liberty-financial","World Liberty Financial"],
+    ["TRUMP",0.643859,"official-trump","OFFICIAL TRUMP"],
+    ["PEPE",2714.36180539,"pepe","Pepe"],
+    ["PI",1037.65,"pi-network","Pi Network"],
+    ["ETH",null,"ethereum","Ethereum"]
+  ],
+  "metadata": {"PI":{"available":1036.66},"ETH":{"historicalScreenshotValue":0.07},"source":"Screenshot transcription; not a brokerage connection. No quantity or cost adjustments applied."}
+}
