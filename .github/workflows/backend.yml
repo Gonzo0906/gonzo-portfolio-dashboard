@@ -32,6 +32,14 @@ jobs:
           if token.lower().startswith("bearer "):
               token = token[7:].strip().strip("\"'")
           print("::add-mask::" + token)
+          if re.fullmatch(r"[0-9a-fA-F]{32}", token):
+              raise SystemExit("The saved API token value is a 32-character ID, not a token secret.")
+          if token.startswith("cfat_"):
+              print("Account API token format detected")
+          elif token.startswith("cfut_"):
+              print("User API token format detected")
+          else:
+              print("Saved token has no modern API token prefix")
           if re.search(r"\s", token) or len(token) < 30:
               raise SystemExit("Saved value is not a complete API token. Copy the token secret displayed immediately after Create Token.")
           if not token:
