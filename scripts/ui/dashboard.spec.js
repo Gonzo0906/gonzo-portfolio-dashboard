@@ -5,12 +5,12 @@ const market=JSON.parse(fs.readFileSync(new URL('../../public/data/market.json',
 for (const [width,height] of [[1440,900],[1366,768],[1920,1080],[768,1024],[390,844],[360,640],[320,568],[844,390],[640,360],[568,320]]){
  test(`no scrolling or clipped holding at ${width}x${height}`,async({page})=>{
   await page.setViewportSize({width,height});await page.goto('/');await expect(page.locator('#coverage')).toContainText('38/39');
-  const bounds=await page.evaluate(()=>{const d=document.documentElement;const panels=[...document.querySelectorAll('.holdings .panel')].map(p=>{const pr=p.getBoundingClientRect(),rows=p.querySelector('.rows').getBoundingClientRect(),nav=p.querySelector('nav').getBoundingClientRect();return {right:pr.right,bottom:pr.bottom,rowBottoms:[...p.querySelectorAll('.holding')].map(r=>r.getBoundingClientRect().bottom),rowsBottom:rows.bottom,navTop:nav.top};});return {w:innerWidth,h:innerHeight,sw:d.scrollWidth,sh:d.scrollHeight,panels};});
+  const bounds=await page.evaluate(()=>{const d=document.documentElement;const panels=[...document.querySelectorAll('.holdings .panel')].map(p=>{const pr=p.getBoundingClientRect(),rows=p.querySelector('.rows').getBoundingClientRect();return {right:pr.right,bottom:pr.bottom,rowBottoms:[...p.querySelectorAll('.holding')].map(r=>r.getBoundingClientRect().bottom),rowsBottom:rows.bottom,navTop:rows.bottom};});return {w:innerWidth,h:innerHeight,sw:d.scrollWidth,sh:d.scrollHeight,panels};});
   expect(bounds.sw).toBeLessThanOrEqual(width);expect(bounds.sh).toBeLessThanOrEqual(height);
   for(const p of bounds.panels){expect(p.right).toBeLessThanOrEqual(width);expect(p.bottom).toBeLessThanOrEqual(height);for(const b of p.rowBottoms)expect(b).toBeLessThanOrEqual(p.navTop+1);}
   expect(await page.locator('#stocks .holding').count()).toBeGreaterThan(0);expect(await page.locator('#cryptos .holding').count()).toBeGreaterThan(0);
-  // Every holding remains reachable using its panel's independent pagination.
-  for(const [id,type] of [['stocks','stocks'],['cryptos','crypto']]){const seen=new Set();for(let i=0;i<40;i++){for(const s of await page.locator(`#${id} .asset`).allTextContents())seen.add(s);const next=page.getByRole('button',{name:`Next ${type} page`,exact:true});if(!await next.isEnabled())break;await next.click();}expect([...seen].sort()).toEqual(raw[type].map(r=>r[0]).sort());}
+  for(const [id,type] of [['stocks','stocks'],['cryptos','crypto']]){expect((await page.locator(`#${id} .asset`).allTextContents()).sort()).toEqual(raw[type].map(r=>r[0]).sort());}
+  await expect(page.locator('#stockPages,#cryptoPages')).toHaveCount(0);
  });
 }
 test('quantity edits persist, recalculate values and can be restored',async({page})=>{

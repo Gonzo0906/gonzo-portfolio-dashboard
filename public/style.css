@@ -5,3 +5,38 @@
 @media(max-height:500px){#dashboard{padding:4px 8px;gap:4px;grid-template-rows:28px 46px minmax(0,1fr) 78px 18px}.overview article{padding:3px 7px;gap:1px}.overview small{font-size:9px}.overview strong{font-size:15px}.overview span{font-size:10px}.columnlabels{display:none}.panelhead,.bottom .panelhead{min-height:26px;padding:3px 8px}nav{min-height:27px;padding:2px}.bottom nav{min-height:24px}.newsitem b{-webkit-line-clamp:1}.newsitem small{margin-top:0;font-size:10px}.holding{height:68px}.holding div:nth-child(2) small:last-child,.holding div:nth-child(3) small:last-child{display:none}.holding{padding:4px 3px;gap:2px}.holding div{gap:3px}.holding b{font-size:12px}.holding small{font-size:11px}.alertitem{margin:0}.alertitem small{display:none}footer{font-size:10px}.logo{height:25px;width:25px;font-size:16px}header h1{font-size:15px}.tools button{padding:3px 6px}}
 
 @media(max-width:750px){.overview strong{font-size:clamp(14px,4.2vw,18px)}.overview article{gap:3px}header{min-width:0}.brand{min-width:0}.tools{flex-shrink:0}}
+
+/* All holdings visible together; quantities and full metrics remain in dialogs. */
+.rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(12,minmax(0,1fr));gap:2px;padding:3px 7px}
+.crypto .rows{grid-template-rows:repeat(8,minmax(0,1fr))}
+.holding{height:auto;min-height:0;padding:3px 5px;grid-template-columns:1fr 1fr;gap:2px;border:1px solid #263248;border-radius:5px;overflow:hidden}
+.holding div:first-child{grid-column:auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.holding div:nth-child(2){display:none}
+.holding div:nth-child(3){text-align:right}
+.holding div:nth-child(3) small{display:none}
+.holding div{gap:1px}
+.holding b{font-size:12px}
+.holding small{font-size:10px}
+.columnlabels{display:block;padding:0 10px 5px;font-size:10px}
+.columnlabels span:not(:first-child){display:none}
+@media(max-width:750px){
+.stock .rows{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(8,minmax(0,1fr))}
+.crypto .rows{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(8,minmax(0,1fr))}
+.rows{padding:2px;gap:2px}
+.holding{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1px;gap:1px}
+.holding div:first-child{display:block;text-align:center}
+.holding div:first-child small{display:none}
+.holding div:nth-child(3){text-align:center}
+.holding b{font-size:11px;line-height:1.1}
+.holding div:nth-child(3) b{font-size:10px}
+.columnlabels{font-size:9px;padding:0 4px 3px}
+}
+@media(max-height:500px){
+.stock .rows{grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr))}
+.crypto .rows{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr))}
+.holding{display:flex;flex-direction:column;justify-content:center;padding:1px;gap:0}
+.holding div:first-child{display:block;text-align:center}
+.holding div:first-child small{display:none}
+.holding b{font-size:11px;line-height:1.1}
+.holding div:nth-child(3) b{font-size:10px}
+}
